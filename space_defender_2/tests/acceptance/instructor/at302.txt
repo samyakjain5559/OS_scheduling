@@ -1,0 +1,19 @@
+--Test destroying enemy fighter. (Special is used.)
+toggle_debug_mode
+
+play(9,30,1,38,38,38,38)
+setup_select(3)
+setup_next(1)
+setup_select(4)
+setup_next(1)
+setup_select(3)
+setup_next(1)
+setup_select(5)
+setup_next(1)
+setup_next(1)
+
+
+move(E,2)
+move(E,1)
+special
+special

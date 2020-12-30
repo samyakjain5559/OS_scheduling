@@ -1,0 +1,26 @@
+--Test toggling debug mode frequently during a game and ensuring the setting is preserved between games.
+play(5,30,20,20,20,40,40)
+setup_next(5)
+
+toggle_debug_mode
+toggle_debug_mode
+
+move(A,1)
+toggle_debug_mode
+toggle_debug_mode
+toggle_debug_mode
+
+fire
+toggle_debug_mode
+toggle_debug_mode
+toggle_debug_mode
+
+pass
+toggle_debug_mode
+
+pass
+abort
+
+play(5,30,20,20,20,40,40)
+setup_next(5)
+pass

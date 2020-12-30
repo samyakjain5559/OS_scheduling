@@ -1,0 +1,10 @@
+--Test enemy projectile spawning in a location containing an enemy projectile.
+toggle_debug_mode
+play(5,30,1,2,2,2,2)
+
+setup_next(5)
+
+move(E,1)
+move(D,1)
+move(E,1)
+move(D,1)

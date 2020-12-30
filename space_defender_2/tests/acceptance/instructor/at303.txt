@@ -1,0 +1,9 @@
+--Test enemy fighter actions, with and without vision.
+toggle_debug_mode
+
+play(5,20,1,2,2,2,2)
+setup_next(5)
+move(A,1)
+move(A,9)
+move(A,6)
+move(A,4)

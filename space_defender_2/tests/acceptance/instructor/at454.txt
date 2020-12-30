@@ -1,0 +1,20 @@
+--Test multiple preempts from various types of enemies.
+toggle_debug_mode
+play(10,30,33,66,101,101,101)
+setup_next(5)
+
+move(D,1)
+move(E,1)
+move(D,1)
+move(E,1)
+move(D,1)
+move(E,1)
+move(D,1)
+move(E,1)
+move(D,1)
+move(E,1)
+move(D,1)
+move(E,1)
+pass
+pass
+

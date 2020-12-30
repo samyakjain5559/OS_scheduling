@@ -1,0 +1,9 @@
+--Test enemy projectile moves into Starfighter.
+toggle_debug_mode
+play(5,11,2,2,2,2,2)
+setup_next(5)
+
+move(A,1)
+pass
+pass
+pass

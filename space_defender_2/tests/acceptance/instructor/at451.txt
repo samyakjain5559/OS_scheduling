@@ -1,0 +1,17 @@
+--Test errors in debug mode. Ensures second state number greater than 9 works properly.
+play(5,10,1,1,1,1,1)
+setup_next(3)
+setup_select(5)
+setup_next(5)
+
+special
+toggle_debug_mode
+special
+special
+move(F,1)
+move(A,11)
+special
+special
+move(F,1)
+move(A,11)
+toggle_debug_mode

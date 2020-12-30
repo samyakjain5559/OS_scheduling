@@ -1,0 +1,16 @@
+--Test Recall into a projectile.
+toggle_debug_mode
+
+play(5,28,1,101,101,101,101)
+setup_select(3)
+setup_next(3)
+setup_select(1)
+setup_next(1)
+setup_next(1)
+
+move(B,1)
+move(B,2)
+move(B,1)
+pass
+move(B,2)
+special

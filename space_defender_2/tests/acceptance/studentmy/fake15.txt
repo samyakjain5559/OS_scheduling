@@ -1,0 +1,23 @@
+--setup errors
+move(A,3)
+play(10,20,1,4,1,2,1)
+play(10,20,1,1,1,1,1)
+setup_select(5)
+setup_next(1)
+move(A,25)
+play(10,20,1,1,1,1,1)
+special
+setup_select(2)
+setup_next(1)
+setup_select(4)
+setup_next(1)
+setup_select(5)
+setup_next(1)
+setup_select(5)
+setup_next(1)
+setup_select(5)
+move(A,9)
+play(10,20,1,1,1,1,1)
+special
+special
+setup_next(1)

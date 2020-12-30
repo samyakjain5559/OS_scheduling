@@ -1,0 +1,16 @@
+--Test enemy pylon actions, with and without vision.
+toggle_debug_mode
+
+play(5,10,1,1,1,1,2)
+setup_next(5)
+
+move(B,6)
+move(B,5)
+move(E,5)
+
+pass
+pass
+pass
+pass
+pass
+pass

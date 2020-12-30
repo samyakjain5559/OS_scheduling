@@ -1,0 +1,11 @@
+--Test firing Rocket, top projectile and then bottom projectile out of board.
+play(5,10,1,1,1,1,1)
+setup_select(4)
+setup_next(5)
+
+toggle_debug_mode
+move(E,2)
+fire
+move(E,1)
+move(A,2)
+fire

@@ -1,0 +1,9 @@
+--Test firing Snipe out of board.
+play(5,10,1,1,1,1,1)
+setup_select(3)
+setup_next(5)
+
+toggle_debug_mode
+move(C,10)
+fire
+fire

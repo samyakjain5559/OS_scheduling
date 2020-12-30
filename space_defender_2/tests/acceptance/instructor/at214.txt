@@ -1,0 +1,9 @@
+--Test friendly projectile spawning in a location occupied by a friendly projectile.
+toggle_debug_mode
+play(5,10,1,1,1,1,1)
+
+setup_select(5)
+setup_next(5)
+
+fire
+fire

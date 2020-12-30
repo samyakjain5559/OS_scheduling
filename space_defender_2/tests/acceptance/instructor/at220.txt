@@ -1,0 +1,8 @@
+--Test enemy moving into Starfighter. 
+toggle_debug_mode
+play(5,10,1,1,1,2,2)
+
+setup_next(5)
+
+move(A,1)
+move(A,8)

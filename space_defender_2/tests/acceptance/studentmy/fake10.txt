@@ -1,0 +1,13 @@
+--Test interceptor prempting their turn (which ends) in front of grunts.
+play(10,30,20,40,60,80,101)
+toggle_debug_mode
+setup_next(5)
+pass
+pass
+pass
+fire
+pass
+fire
+pass
+fire
+pass

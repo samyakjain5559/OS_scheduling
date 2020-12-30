@@ -1,0 +1,12 @@
+--Test enemy grunt various projectile damage.
+toggle_debug_mode
+
+play(5,10,2,2,2,2,2)
+setup_select(3)
+setup_next(5)
+
+move(A,5)
+move(A,4)
+move(A,3)
+
+

@@ -1,0 +1,16 @@
+--Test destroying enemy grunt.
+toggle_debug_mode
+
+play(5,12,38,38,38,38,38)
+setup_select(3)
+setup_next(2)
+setup_select(3)
+setup_next(1)
+setup_select(1)
+setup_next(1)
+setup_next(1)
+
+move(A,1)
+fire
+fire
+fire

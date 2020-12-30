@@ -1,0 +1,10 @@
+--Test enemy spawning in a location containing the Starfighter. 
+toggle_debug_mode
+play(5,10,1,1,1,101,101)
+
+setup_next(5)
+
+move(C,10)
+pass
+pass
+

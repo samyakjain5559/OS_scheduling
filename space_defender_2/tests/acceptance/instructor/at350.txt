@@ -1,0 +1,11 @@
+--Test enemy interceptor fire prempt.
+toggle_debug_mode
+play(5,30,1,1,1,2,2)
+
+setup_next(5)
+fire
+fire
+move(A,1)
+fire
+move(E,1)
+fire

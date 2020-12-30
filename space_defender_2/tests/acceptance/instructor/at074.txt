@@ -1,0 +1,11 @@
+--Test firing Spread, top projectile and then bottom projectile out of board.
+play(5,10,1,1,1,1,1)
+setup_select(2)
+setup_next(5)
+
+toggle_debug_mode
+move(A,1)
+fire
+
+move(E,1)
+fire

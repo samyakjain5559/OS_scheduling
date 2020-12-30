@@ -1,0 +1,970 @@
+  state:not started, normal, ok
+  Welcome to Space Defender Version 2.
+->play(5,30,40,70,80,90,100)
+  state:weapon setup, normal, ok
+  1:Standard (A single projectile is fired in front)
+    Health:10, Energy:10, Regen:0/1, Armour:0, Vision:1, Move:1, Move Cost:1,
+    Projectile Damage:70, Projectile Cost:5 (energy)
+  2:Spread (Three projectiles are fired in front, two going diagonal)
+    Health:0, Energy:60, Regen:0/2, Armour:1, Vision:0, Move:0, Move Cost:2,
+    Projectile Damage:50, Projectile Cost:10 (energy)
+  3:Snipe (Fast and high damage projectile, but only travels via teleporting)
+    Health:0, Energy:100, Regen:0/5, Armour:0, Vision:10, Move:3, Move Cost:0,
+    Projectile Damage:1000, Projectile Cost:20 (energy)
+  4:Rocket (Two projectiles appear behind to the sides of the Starfighter and accelerates)
+    Health:10, Energy:0, Regen:10/0, Armour:2, Vision:2, Move:0, Move Cost:3,
+    Projectile Damage:100, Projectile Cost:10 (health)
+  5:Splitter (A single mine projectile is placed in front of the Starfighter)
+    Health:0, Energy:100, Regen:0/10, Armour:0, Vision:0, Move:0, Move Cost:5,
+    Projectile Damage:150, Projectile Cost:70 (energy)
+  Weapon Selected:Standard
+->setup_select(2)
+  state:weapon setup, normal, ok
+  1:Standard (A single projectile is fired in front)
+    Health:10, Energy:10, Regen:0/1, Armour:0, Vision:1, Move:1, Move Cost:1,
+    Projectile Damage:70, Projectile Cost:5 (energy)
+  2:Spread (Three projectiles are fired in front, two going diagonal)
+    Health:0, Energy:60, Regen:0/2, Armour:1, Vision:0, Move:0, Move Cost:2,
+    Projectile Damage:50, Projectile Cost:10 (energy)
+  3:Snipe (Fast and high damage projectile, but only travels via teleporting)
+    Health:0, Energy:100, Regen:0/5, Armour:0, Vision:10, Move:3, Move Cost:0,
+    Projectile Damage:1000, Projectile Cost:20 (energy)
+  4:Rocket (Two projectiles appear behind to the sides of the Starfighter and accelerates)
+    Health:10, Energy:0, Regen:10/0, Armour:2, Vision:2, Move:0, Move Cost:3,
+    Projectile Damage:100, Projectile Cost:10 (health)
+  5:Splitter (A single mine projectile is placed in front of the Starfighter)
+    Health:0, Energy:100, Regen:0/10, Armour:0, Vision:0, Move:0, Move Cost:5,
+    Projectile Damage:150, Projectile Cost:70 (energy)
+  Weapon Selected:Spread
+->setup_next(3)
+  state:power setup, normal, ok
+  1:Recall (50 energy): Teleport back to spawn.
+  2:Repair (50 energy): Gain 50 health, can go over max health. Health regen will not be in effect if over cap.
+  3:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+  4:Deploy Drones (100 energy): Clear all projectiles.
+  5:Orbital Strike (100 energy): Deal 100 damage to all enemies, affected by armour.
+  Power Selected:Recall (50 energy): Teleport back to spawn.
+->setup_select(3)
+  state:power setup, normal, ok
+  1:Recall (50 energy): Teleport back to spawn.
+  2:Repair (50 energy): Gain 50 health, can go over max health. Health regen will not be in effect if over cap.
+  3:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+  4:Deploy Drones (100 energy): Clear all projectiles.
+  5:Orbital Strike (100 energy): Deal 100 damage to all enemies, affected by armour.
+  Power Selected:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+->setup_next(5)
+  state:in game(0.0), normal, ok
+  Starfighter:
+    [0,S]->health:60/60, energy:120/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  _  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(1.0), normal, ok
+  Starfighter:
+    [0,S]->health:60/60, energy:110/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(2.0), normal, ok
+  Starfighter:
+    [0,S]->health:60/60, energy:104/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(3.0), normal, ok
+  Starfighter:
+    [0,S]->health:60/60, energy:98/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(4.0), normal, ok
+  Starfighter:
+    [0,S]->health:60/60, energy:92/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(5.0), normal, ok
+  Starfighter:
+    [0,S]->health:60/60, energy:86/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  *  *  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->special
+  state:in game(6.0), normal, ok
+  Starfighter:
+    [0,S]->health:10/60, energy:190/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  _  _  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  _  *  *  *  *  *  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(7.0), normal, ok
+  Starfighter:
+    [0,S]->health:11/60, energy:180/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  _  _  _  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  _  *  *  *  *  *  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(8.0), normal, ok
+  Starfighter:
+    [0,S]->health:12/60, energy:170/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  <  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  _  *  *  *  *  *  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(9.0), normal, ok
+  Starfighter:
+    [0,S]->health:13/60, energy:160/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  <  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  _  _  <  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  _  *  *  *  *  *  <  F  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(10.0), normal, ok
+  Starfighter:
+    [0,S]->health:14/60, energy:150/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  <  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  <  _  <  _  <  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  *  _  *  *  F  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->pass
+  state:in game(11.0), normal, ok
+  Starfighter:
+    [0,S]->health:16/60, energy:150/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:3
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  <  _  <  _  <  G  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  _  <  _  <  _  <  _  <  _  <  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(12.0), normal, ok
+  Starfighter:
+    [0,S]->health:17/60, energy:140/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:3
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A <  _  <  _  <  _  <  G  <  G  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  *  <  _  <  _  <  _  <  _  <  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  _  *  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(13.0), normal, ok
+  Starfighter:
+    [0,S]->health:18/60, energy:130/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:3
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  <  G  <  G  F  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  *  <  _  <  _  <  _  <  _  <  G  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(14.0), normal, ok
+  Starfighter:
+    [0,S]->health:19/60, energy:120/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:3
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  G  <  G  <  F  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  *  <  _  <  _  <  _  <  G  F  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  _  *  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  I  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(15.0), normal, ok
+  Starfighter:
+    [0,S]->health:20/60, energy:110/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:3
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  <  G  _  <  F  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  *  <  _  <  _  <  G  F  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  *  _  *  _  _  _  _  I  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  I  C  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(16.0), normal, ok
+  Starfighter:
+    [0,S]->health:21/60, energy:104/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:3
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  _  _  <  F  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  *  <  _  <  G  <  F  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  *  *  _  *  _  _  I  I  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  I  C  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->special
+  state:in game(17.0), normal, ok
+  Starfighter:
+    [0,S]->health:1/60, energy:150/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:4
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  _  <  F  _  _  _  _  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  _  <  G  _  <  F  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  _  *  *  *  *  *  _  _  _  _  I  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  _  _  _  _  _  I  _  _  _  C  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  <  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(18.0), normal, ok
+  Starfighter:
+    [0,S]->health:2/60, energy:140/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:5
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  <  F  _  _  _  <  F  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  _  _  _  <  F  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  _  *  *  *  _  *  _  _  _  I  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  I  C  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E <  _  <  _  <  _  <  _  <  G  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(19.0), normal, ok
+  Starfighter:
+    [0,S]->health:3/60, energy:130/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:6
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  <  F  _  <  _  <  F  F  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  <  F  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  _  *  *  *  _  _  _  _  I  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  I  C  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  <  _  <  G  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(20.0), normal, ok
+  Starfighter:
+    [0,S]->health:4/60, energy:120/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:7
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A <  F  _  _  _  <  F  F  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  <  F  _  _  _  _  _  _  <  F  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  _  *  *  _  _  _  _  I  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  I  C  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  <  G  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(21.0), normal, ok
+  Starfighter:
+    [0,S]->health:5/60, energy:110/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:8
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A F  _  _  _  <  F  F  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  _  F  _  _  _  _  <  F  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  *  _  _  *  _  _  _  I  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  I  C  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  G  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->pass
+  state:in game(22.0), normal, ok
+  Starfighter:
+    [0,S]->health:7/60, energy:118/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:9
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A F  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  <  F  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  _  *  *  *  *  I  _  _  _  _  _  I  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  _  I  _  _  _  C  _  _  _  _  I  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  I  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(23.0), normal, ok
+  Starfighter:
+    [0,S]->health:8/60, energy:110/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:10
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  F  _  _  _  _  _  _  _  _  <  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  I  *  *  *  _  _  _  _  _  I  I  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  I  C  _  _  _  _  <  G  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  I  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(24.0), normal, ok
+  Starfighter:
+    [0,S]->health:9/60, energy:104/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:13
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B F  _  _  _  _  _  <  _  <  _  <  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  _  _  _  *  _  _  _  _  _  I  I  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  I  C  _  _  _  <  G  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(25.0), normal, ok
+  Starfighter:
+    [0,S]->health:10/60, energy:98/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:13
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  <  _  <  _  <  _  <  _  <  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  I  _  _  *  _  _  _  _  I  I  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  I  C  _  _  <  G  _  _  <  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(26.0), normal, ok
+  Starfighter:
+    [0,S]->health:11/60, energy:92/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:16
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  *  <  _  <  _  <  _  <  _  <  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  _  _  _  _  _  *  _  _  _  I  I  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  _  C  _  <  G  _  _  <  _  <  G  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(27.0), normal, ok
+  Starfighter:
+    [0,S]->health:12/60, energy:86/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:16
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  _  _  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  *  <  _  <  _  <  _  <  _  <  G  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  _  _  _  _  _  *  _  _  I  I  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D I  C  <  G  _  _  <  _  <  G  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->special
+  state:in game(28.0), normal, ok
+  Starfighter:
+    [0,S]->health:1/60, energy:114/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:17
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  _  <  _  <  _  <  _  <  G  F  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  _  *  *  _  _  _  _  _  _  _  _  I  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  C  G  _  <  _  <  G  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(29.0), normal, ok
+  Starfighter:
+    [0,S]->health:2/60, energy:108/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:17
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  <  _  <  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  *  <  _  <  _  <  G  F  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  _  *  *  _  _  _  _  _  _  _  I  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D C  G  _  _  <  G  _  _  _  _  <  F  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(30.0), normal, ok
+  Starfighter:
+    [0,S]->health:3/60, energy:102/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:17
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  <  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  *  <  _  <  G  <  F  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  _  *  *  _  _  _  _  _  _  I  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  _  <  G  _  _  _  <  F  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(31.0), normal, ok
+  Starfighter:
+    [0,S]->health:4/60, energy:96/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:17
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  <  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  *  <  G  _  <  F  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  _  *  *  _  _  _  _  _  I  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  _  _  _  <  _  <  F  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(32.0), normal, ok
+  Starfighter:
+    [0,S]->health:5/60, energy:90/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:17
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  <  _  <  _  <  G  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  _  _  _  <  F  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  *  _  *  *  _  _  _  _  I  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D <  *  _  _  _  <  F  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->pass
+  state:in game(33.0), normal, ok
+  Starfighter:
+    [0,S]->health:7/60, energy:98/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:17
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A <  _  <  _  <  _  <  G  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  _  *  *  *  *  _  *  *  I  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D F  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->move(C,6)
+  state:not started, normal, ok
+  Starfighter:
+    [0,S]->health:0/60, energy:90/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,4]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:18
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A <  _  <  _  _  _  _  G  _  _  _  _  _  C  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  _  _  _  _  _  _  _  _  _  _  _  _  I  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C _  _  _  X  *  *  *  _  *  _  _  _  _  G  I  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D F  _  _  _  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+  The game is over. Better luck next time!
+->play(5,30,40,70,80,90,100)
+  state:weapon setup, normal, ok
+  1:Standard (A single projectile is fired in front)
+    Health:10, Energy:10, Regen:0/1, Armour:0, Vision:1, Move:1, Move Cost:1,
+    Projectile Damage:70, Projectile Cost:5 (energy)
+  2:Spread (Three projectiles are fired in front, two going diagonal)
+    Health:0, Energy:60, Regen:0/2, Armour:1, Vision:0, Move:0, Move Cost:2,
+    Projectile Damage:50, Projectile Cost:10 (energy)
+  3:Snipe (Fast and high damage projectile, but only travels via teleporting)
+    Health:0, Energy:100, Regen:0/5, Armour:0, Vision:10, Move:3, Move Cost:0,
+    Projectile Damage:1000, Projectile Cost:20 (energy)
+  4:Rocket (Two projectiles appear behind to the sides of the Starfighter and accelerates)
+    Health:10, Energy:0, Regen:10/0, Armour:2, Vision:2, Move:0, Move Cost:3,
+    Projectile Damage:100, Projectile Cost:10 (health)
+  5:Splitter (A single mine projectile is placed in front of the Starfighter)
+    Health:0, Energy:100, Regen:0/10, Armour:0, Vision:0, Move:0, Move Cost:5,
+    Projectile Damage:150, Projectile Cost:70 (energy)
+  Weapon Selected:Spread
+->setup_next(5)
+  state:in game(0.0), normal, ok
+  Starfighter:
+    [0,S]->health:60/60, energy:120/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  _  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(1.0), normal, ok
+  Starfighter:
+    [0,S]->health:60/60, energy:110/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(2.0), normal, ok
+  Starfighter:
+    [0,S]->health:60/60, energy:104/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(3.0), normal, ok
+  Starfighter:
+    [0,S]->health:60/60, energy:98/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(4.0), normal, ok
+  Starfighter:
+    [0,S]->health:60/60, energy:92/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(5.0), normal, ok
+  Starfighter:
+    [0,S]->health:60/60, energy:86/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  *  *  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->special
+  state:in game(6.0), normal, ok
+  Starfighter:
+    [0,S]->health:10/60, energy:190/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  _  *  *  *  *  *  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(7.0), normal, ok
+  Starfighter:
+    [0,S]->health:11/60, energy:180/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  _  *  *  *  *  *  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(8.0), normal, ok
+  Starfighter:
+    [0,S]->health:12/60, energy:170/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  _  *  *  *  *  *  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(9.0), normal, ok
+  Starfighter:
+    [0,S]->health:13/60, energy:160/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  _  *  *  *  *  *  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(10.0), normal, ok
+  Starfighter:
+    [0,S]->health:14/60, energy:150/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  *  _  *  *  *  *  *  P  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->pass
+  state:in game(11.0), normal, ok
+  Starfighter:
+    [0,S]->health:16/60, energy:150/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  _  _  _  _  _  _  _  _  _  _  P  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  _  *  *  *  *  _  *  *  P  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  _  _  _  _  _  _  <  F  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(12.0), normal, ok
+  Starfighter:
+    [0,S]->health:17/60, energy:140/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:0
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  _  _  _  _  _  _  _  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  _  P  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  _  *  *  *  *  P  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  <  F  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(13.0), normal, ok
+  Starfighter:
+    [0,S]->health:18/60, energy:130/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:1
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  P  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  _  *  *  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D <  *  _  _  _  <  F  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(14.0), normal, ok
+  Starfighter:
+    [0,S]->health:19/60, energy:120/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:1
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  <  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  P  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  _  *  *  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  <  F  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(15.0), normal, ok
+  Starfighter:
+    [0,S]->health:20/60, energy:110/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:1
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  <  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  P  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  *  _  *  *  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  <  F  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(16.0), normal, ok
+  Starfighter:
+    [0,S]->health:21/60, energy:104/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:1
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  <  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  <  P  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  *  *  _  *  *  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  <  F  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->special
+  state:in game(17.0), normal, ok
+  Starfighter:
+    [0,S]->health:1/60, energy:150/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:1
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A <  _  <  _  <  _  <  _  <  G  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  P  _  _  _  _  _  _  _  _  <  F  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  _  *  *  *  *  *  _  *  *  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  <  F  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(18.0), normal, ok
+  Starfighter:
+    [0,S]->health:2/60, energy:140/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:1
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A <  _  <  _  <  _  <  G  <  G  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B P  _  _  _  _  _  _  <  F  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  _  *  *  *  *  *  _  *  *  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D <  F  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(19.0), normal, ok
+  Starfighter:
+    [0,S]->health:3/60, energy:130/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:1
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A <  _  <  _  <  G  <  G  _  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  <  _  <  F  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  _  *  *  *  *  *  _  *  *  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D F  _  _  _  _  _  _  _  _  _  _  P  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(20.0), normal, ok
+  Starfighter:
+    [0,S]->health:4/60, energy:120/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:1
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  G  <  G  _  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  *  _  _  _  <  F  _  _  _  <  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  _  *  *  *  *  *  _  *  *  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  P  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(21.0), normal, ok
+  Starfighter:
+    [0,S]->health:5/60, energy:110/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:1
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  <  G  _  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  <  F  _  _  <  _  <  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  *  _  *  *  *  *  *  _  *  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  P  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->pass
+  state:in game(22.0), normal, ok
+  Starfighter:
+    [0,S]->health:7/60, energy:118/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:1
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  _  _  <  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  _  _  _  _  _  <  _  <  _  <  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  _  *  *  *  *  _  *  *  *  *  *  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  _  _  _  _  P  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(23.0), normal, ok
+  Starfighter:
+    [0,S]->health:8/60, energy:110/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:1
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A <  _  <  _  <  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  <  _  <  _  <  _  <  _  <  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  _  *  *  *  *  _  *  *  *  *  *  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  P  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  _  _  _  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(24.0), normal, ok
+  Starfighter:
+    [0,S]->health:9/60, energy:104/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:1
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  <  _  <  _  <  G  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  *  <  _  <  _  <  _  <  _  <  G  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  _  *  *  *  *  _  *  *  *  *  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  <  P  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  _  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(25.0), normal, ok
+  Starfighter:
+    [0,S]->health:10/60, energy:98/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:1
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  <  _  <  G  _  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  *  <  _  <  _  <  _  <  G  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  _  *  *  *  *  _  *  *  *  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D <  P  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  <  _  <  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(26.0), normal, ok
+  Starfighter:
+    [0,S]->health:11/60, energy:92/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:1
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  <  G  _  _  <  G  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  *  <  _  <  _  <  G  _  _  _  I  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  *  _  *  *  *  *  _  *  *  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D P  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E <  _  <  _  <  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(27.0), normal, ok
+  Starfighter:
+    [0,S]->health:12/60, energy:86/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:2
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  G  _  _  <  G  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  *  <  _  <  G  _  _  _  _  I  C  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  *  *  _  *  *  *  *  I  *  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E <  _  <  _  <  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->special
+  state:in game(28.0), normal, ok
+  Starfighter:
+    [0,S]->health:1/60, energy:114/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:7
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  _  _  <  G  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B <  _  <  G  _  _  _  I  _  _  _  C  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  _  *  *  *  *  *  _  *  *  *  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  <  _  <  _  <  G  F  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(29.0), normal, ok
+  Starfighter:
+    [0,S]->health:2/60, energy:108/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:9
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A <  _  <  G  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  _  _  _  _  _  _  _  _  I  C  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  _  *  *  *  *  _  _  *  *  *  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E <  _  <  _  <  _  <  G  F  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(30.0), normal, ok
+  Starfighter:
+    [0,S]->health:3/60, energy:102/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:9
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  _  I  C  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  _  *  *  *  *  _  I  *  *  *  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  _  <  G  <  F  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(31.0), normal, ok
+  Starfighter:
+    [0,S]->health:4/60, energy:96/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:10
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  _  I  C  <  G  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  _  *  *  *  _  I  F  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  *  G  _  <  F  _  _  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->fire
+  state:in game(32.0), normal, ok
+  Starfighter:
+    [0,S]->health:5/60, energy:90/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:11
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  *  _  _  _  _  I  C  G  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  *  *  *  *  _  *  _  *  I  F  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  *  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  <  F  _  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+->pass
+  state:in game(33.0), normal, ok
+  Starfighter:
+    [0,S]->health:7/60, energy:98/120, Regen:1/4, Armour:2, Vision:12, Move:9, Move Cost:4, location:[C,1]
+      Projectile Pattern:Spread, Projectile Damage:50, Projectile Cost:10 (energy)
+      Power:Overcharge (up to 50 health): Gain 2*health spent energy, can go over max energy. Energy regen will not be in effect if over cap.
+      score:15
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+    A _  _  *  _  _  _  _  I  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    B _  _  _  I  _  _  _  C  G  _  <  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    C S  _  *  *  *  _  _  I  _  _  I  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    D _  _  _  _  _  _  _  _  _  _  _  _  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?
+    E _  _  _  _  _  _  <  _  <  _  <  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?  ?

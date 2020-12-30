@@ -1,0 +1,14 @@
+--Test Overcharge after taking damage and not having 50 health and full energy.
+toggle_debug_mode
+
+play(10,10,1,2,2,2,2)
+setup_select(3)
+setup_next(3)
+setup_select(3)
+setup_next(1)
+setup_next(1)
+
+
+move(A,1)
+move(A,5)
+special

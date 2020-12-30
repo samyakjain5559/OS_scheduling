@@ -1,0 +1,9 @@
+--Test friendly projectile spawning in a location occupied by a enemy projectile, same damage.
+toggle_debug_mode
+play(5,10,1,1,1,1,2)
+
+setup_next(5)
+
+move(A,5)
+pass
+fire

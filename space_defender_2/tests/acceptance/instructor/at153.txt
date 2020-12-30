@@ -1,0 +1,18 @@
+--Test Recall into an enemy.
+toggle_debug_mode
+
+play(10,10,1,1,1,2,2)
+setup_select(3)
+setup_next(3)
+setup_select(1)
+setup_next(1)
+setup_next(1)
+
+move(E,2)
+fire
+move(B,1)
+move(B,2)
+move(B,1)
+special
+
+move(B,1)
