@@ -1,0 +1,8 @@
+--Move left, collision occurs during transit.
+play(6,30,20,1)
+fire
+fire
+fire
+move(A,10)
+move(C,10)
+move(C,1)

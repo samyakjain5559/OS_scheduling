@@ -1,0 +1,14 @@
+play(6,11,11,2)
+move(D,3)
+fire
+move(A,2)
+move(D,8)
+fire
+move(D,3)
+fire
+move(D,5)
+move(D,3)
+move(B,6)
+move(D,11)
+fire
+

@@ -1,0 +1,65 @@
+  Welcome to Space Defender Version 1.
+->play(6,11,11,2)
+  state:1.0, ok
+      1  2  3  4  5  6  7  8  9 10 11
+    A _  _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _  _
+    C S  _  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _
+    F _  _  _  _  _  _  _  _  _  _  _
+->fire
+  state:2.0, ok
+  The Starfighter fires a projectile at: [C,1]
+      1  2  3  4  5  6  7  8  9 10 11
+    A _  _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _  _
+    C S  *  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _
+    F _  _  _  _  _  _  _  _  _  _  _
+->move(D,10)
+  state:3.0, ok
+  A projectile moves: [C,2] -> [C,4]
+  The Starfighter moves: [C,1] -> [D,10]
+      1  2  3  4  5  6  7  8  9 10 11
+    A _  _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _  _
+    C _  _  _  *  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  S  _
+    E _  _  _  _  _  _  _  _  _  _  _
+    F _  _  _  _  _  _  _  _  _  _  _
+->move(C,9)
+  state:4.0, ok
+  A projectile moves: [C,4] -> [C,6]
+  The Starfighter moves: [D,10] -> [C,9]
+      1  2  3  4  5  6  7  8  9 10 11
+    A _  _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  *  _  _  S  _  _
+    D _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _
+    F _  _  _  _  _  _  _  _  _  _  _
+->fire
+  state:5.0, ok
+  A projectile moves: [C,6] -> [C,8]
+  The Starfighter fires a projectile at: [C,9]
+      1  2  3  4  5  6  7  8  9 10 11
+    A _  _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  *  S  *  _
+    D _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _
+    F _  _  _  _  _  _  _  _  _  _  _
+->fire
+  state:6.0, ok
+  A projectile moves and collides with the Starfighter: [C,8] -> [C,9]
+  A projectile moves: [C,10] -> out of the board
+      1  2  3  4  5  6  7  8  9 10 11
+    A _  _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  X  _  _
+    D _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _
+    F _  _  _  _  _  _  _  _  _  _  _
+  The game is over. Better luck next time!

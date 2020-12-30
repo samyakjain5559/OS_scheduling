@@ -1,0 +1,11 @@
+play(10,30,20,3)
+fire
+move(F,18)
+move(E,18)
+fire
+pass
+fire
+pass
+pass
+undo
+pass

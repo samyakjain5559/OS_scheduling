@@ -1,0 +1,10 @@
+--Tests play and abort multiple times during different stages of the game, all valid, with various board sizes.
+play(5,5,3,5)
+abort
+play(10,30,38,5)
+abort
+play(8,21,27,5)
+pass
+pass
+abort
+

@@ -1,0 +1,236 @@
+  Welcome to Space Defender Version 1.
+->play(5,5,8,1)
+  state:1.0, ok
+      1  2  3  4  5
+    A _  _  _  _  _
+    B _  _  _  _  _
+    C S  _  _  _  _
+    D _  _  _  _  _
+    E _  _  _  _  _
+->fire
+  state:2.0, ok
+  The Starfighter fires a projectile at: [C,1]
+      1  2  3  4  5
+    A _  _  _  _  _
+    B _  _  _  _  _
+    C S  *  _  _  _
+    D _  _  _  _  _
+    E _  _  _  _  _
+->move(A,5)
+  state:3.0, ok
+  A projectile moves: [C,2] -> [C,3]
+  The Starfighter moves: [C,1] -> [A,5]
+      1  2  3  4  5
+    A _  _  _  _  S
+    B _  _  _  _  _
+    C _  _  *  _  _
+    D _  _  _  _  _
+    E _  _  _  _  _
+->move(C,5)
+  state:4.0, ok
+  A projectile moves: [C,3] -> [C,4]
+  The Starfighter moves: [A,5] -> [C,5]
+      1  2  3  4  5
+    A _  _  _  _  _
+    B _  _  _  _  _
+    C _  _  _  *  S
+    D _  _  _  _  _
+    E _  _  _  _  _
+->fire
+  state:5.0, ok
+  A projectile moves and collides with the Starfighter: [C,4] -> [C,5]
+      1  2  3  4  5
+    A _  _  _  _  _
+    B _  _  _  _  _
+    C _  _  _  _  X
+    D _  _  _  _  _
+    E _  _  _  _  _
+  The game is over. Better luck next time!
+->play(5,8,11,2)
+  state:6.0, ok
+      1  2  3  4  5  6  7  8
+    A _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _
+    C S  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _
+->fire
+  state:7.0, ok
+  The Starfighter fires a projectile at: [C,1]
+      1  2  3  4  5  6  7  8
+    A _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _
+    C S  *  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _
+->move(A,8)
+  state:8.0, ok
+  A projectile moves: [C,2] -> [C,4]
+  The Starfighter moves: [C,1] -> [A,8]
+      1  2  3  4  5  6  7  8
+    A _  _  _  _  _  _  _  S
+    B _  _  _  _  _  _  _  _
+    C _  _  _  *  _  _  _  _
+    D _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _
+->move(C,8)
+  state:9.0, ok
+  A projectile moves: [C,4] -> [C,6]
+  The Starfighter moves: [A,8] -> [C,8]
+      1  2  3  4  5  6  7  8
+    A _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _
+    C _  _  _  _  _  *  _  S
+    D _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _
+->pass
+  state:10.0, ok
+  A projectile moves and collides with the Starfighter: [C,6] -> [C,8]
+      1  2  3  4  5  6  7  8
+    A _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  X
+    D _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _
+  The game is over. Better luck next time!
+->play(5,11,14,3)
+  state:11.0, ok
+      1  2  3  4  5  6  7  8  9 10 11
+    A _  _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _  _
+    C S  _  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _
+->fire
+  state:12.0, ok
+  The Starfighter fires a projectile at: [C,1]
+      1  2  3  4  5  6  7  8  9 10 11
+    A _  _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _  _
+    C S  *  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _
+->move(A,11)
+  state:13.0, ok
+  A projectile moves: [C,2] -> [C,5]
+  The Starfighter moves: [C,1] -> [A,11]
+      1  2  3  4  5  6  7  8  9 10 11
+    A _  _  _  _  _  _  _  _  _  _  S
+    B _  _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  *  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _
+->move(C,11)
+  state:14.0, ok
+  A projectile moves: [C,5] -> [C,8]
+  The Starfighter moves: [A,11] -> [C,11]
+      1  2  3  4  5  6  7  8  9 10 11
+    A _  _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  *  _  _  S
+    D _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _
+->pass
+  state:15.0, ok
+  A projectile moves and collides with the Starfighter: [C,8] -> [C,11]
+      1  2  3  4  5  6  7  8  9 10 11
+    A _  _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _  X
+    D _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _
+  The game is over. Better luck next time!
+->play(5,14,17,4)
+  state:16.0, ok
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14
+    A _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    C S  _  _  _  _  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _  _  _  _
+->fire
+  state:17.0, ok
+  The Starfighter fires a projectile at: [C,1]
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14
+    A _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    C S  *  _  _  _  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _  _  _  _
+->move(A,14)
+  state:18.0, ok
+  A projectile moves: [C,2] -> [C,6]
+  The Starfighter moves: [C,1] -> [A,14]
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14
+    A _  _  _  _  _  _  _  _  _  _  _  _  _  S
+    B _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  *  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _  _  _  _
+->move(C,14)
+  state:19.0, ok
+  A projectile moves: [C,6] -> [C,10]
+  The Starfighter moves: [A,14] -> [C,14]
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14
+    A _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  *  _  _  _  S
+    D _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _  _  _  _
+->move(B,14)
+  state:20.0, ok
+  A projectile moves and collides with the Starfighter: [C,10] -> [C,14]
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14
+    A _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _  _  _  _  X
+    D _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _  _  _  _
+  The game is over. Better luck next time!
+->play(5,17,20,5)
+  state:21.0, ok
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17
+    A _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    C S  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+->fire
+  state:22.0, ok
+  The Starfighter fires a projectile at: [C,1]
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17
+    A _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    C S  *  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+->move(A,17)
+  state:23.0, ok
+  A projectile moves: [C,2] -> [C,7]
+  The Starfighter moves: [C,1] -> [A,17]
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17
+    A _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  S
+    B _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  *  _  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+->move(C,17)
+  state:24.0, ok
+  A projectile moves: [C,7] -> [C,12]
+  The Starfighter moves: [A,17] -> [C,17]
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17
+    A _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _  _  *  _  _  _  _  S
+    D _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+->pass
+  state:25.0, ok
+  A projectile moves and collides with the Starfighter: [C,12] -> [C,17]
+      1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17
+    A _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  X
+    D _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _  _
+  The game is over. Better luck next time!

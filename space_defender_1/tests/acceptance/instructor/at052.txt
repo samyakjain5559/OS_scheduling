@@ -1,0 +1,23 @@
+--Check undo firing at edge of board.
+play(5,5,7,3)
+move(A,5)
+fire
+move(B,5)
+fire
+move(C,5)
+fire
+move(D,5)
+fire
+move(E,5)
+fire
+undo
+undo
+undo
+undo
+undo
+undo
+undo
+undo
+undo
+undo
+

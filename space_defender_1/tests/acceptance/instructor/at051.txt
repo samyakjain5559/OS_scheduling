@@ -1,0 +1,26 @@
+--Check undo redo does not carry over to the next game or work after game is over.
+play(5,10,2,1)
+fire
+pass
+undo
+redo
+undo
+undo
+redo
+redo
+undo
+move(C,3)
+
+undo
+redo
+play(5,10,2,1)
+undo
+redo
+fire
+abort
+
+undo
+redo
+play(5,10,2,1)
+undo
+redo

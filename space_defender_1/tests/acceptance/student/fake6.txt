@@ -1,0 +1,7 @@
+play(5,10,8,3)
+fire
+pass
+move(C,6)
+pass
+pass
+

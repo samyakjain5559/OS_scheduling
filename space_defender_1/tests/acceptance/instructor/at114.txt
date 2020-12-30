@@ -1,0 +1,6 @@
+--Move right, collision occurs during transit.
+play(6,30,20,1)
+fire
+fire
+fire
+move(C,8)
