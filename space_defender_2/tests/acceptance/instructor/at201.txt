@@ -1,0 +1,9 @@
+--Test friendly projectile moves into enemy projectile, friendly projectile higher damage.
+toggle_debug_mode
+play(5,10,2,2,2,2,2)
+setup_next(5)
+
+move(A,1)
+fire
+pass
+

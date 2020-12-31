@@ -1,0 +1,121 @@
+  Welcome to Space Defender Version 1.
+->abort
+  state:0.1, error
+  Not in game.
+->undo
+  state:0.2, error
+  Not in game.
+->redo
+  state:0.3, error
+  Not in game.
+->fire
+  state:0.4, error
+  Not in game.
+->move(A,1)
+  state:0.5, error
+  Not in game.
+->pass
+  state:0.6, error
+  Not in game.
+->pass
+  state:0.7, error
+  Not in game.
+->pass
+  state:0.8, error
+  Not in game.
+->pass
+  state:0.9, error
+  Not in game.
+->pass
+  state:0.10, error
+  Not in game.
+->pass
+  state:0.11, error
+  Not in game.
+->pass
+  state:0.12, error
+  Not in game.
+->pass
+  state:0.13, error
+  Not in game.
+->pass
+  state:0.14, error
+  Not in game.
+->pass
+  state:0.15, error
+  Not in game.
+->play(5,5,2,1)
+  state:1.0, ok
+      1  2  3  4  5
+    A _  _  _  _  _
+    B _  _  _  _  _
+    C S  _  _  _  _
+    D _  _  _  _  _
+    E _  _  _  _  _
+->play(5,5,2,1)
+  state:1.1, error
+  Please end the current game before starting a new one.
+->fire
+  state:2.0, ok
+  The Starfighter fires a projectile at: [C,1]
+      1  2  3  4  5
+    A _  _  _  _  _
+    B _  _  _  _  _
+    C S  *  _  _  _
+    D _  _  _  _  _
+    E _  _  _  _  _
+->move(C,3)
+  state:3.0, ok
+  A projectile moves: [C,2] -> [C,3]
+  The Starfighter moves and collides with a projectile: [C,1] -> [C,3]
+      1  2  3  4  5
+    A _  _  _  _  _
+    B _  _  _  _  _
+    C _  _  X  _  _
+    D _  _  _  _  _
+    E _  _  _  _  _
+  The game is over. Better luck next time!
+->abort
+  state:3.1, error
+  Not in game.
+->undo
+  state:3.2, error
+  Not in game.
+->redo
+  state:3.3, error
+  Not in game.
+->fire
+  state:3.4, error
+  Not in game.
+->move(A,1)
+  state:3.5, error
+  Not in game.
+->play(5,5,2,1)
+  state:4.0, ok
+      1  2  3  4  5
+    A _  _  _  _  _
+    B _  _  _  _  _
+    C S  _  _  _  _
+    D _  _  _  _  _
+    E _  _  _  _  _
+->play(5,5,2,1)
+  state:4.1, error
+  Please end the current game before starting a new one.
+->abort
+  state:5.0, ok
+  Game has been exited.
+->abort
+  state:5.1, error
+  Not in game.
+->undo
+  state:5.2, error
+  Not in game.
+->redo
+  state:5.3, error
+  Not in game.
+->fire
+  state:5.4, error
+  Not in game.
+->move(A,1)
+  state:5.5, error
+  Not in game.

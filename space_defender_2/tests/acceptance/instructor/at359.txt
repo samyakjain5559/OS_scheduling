@@ -1,0 +1,21 @@
+--Test multiple interceptor in column with Starfighter and prempting V2.
+toggle_debug_mode
+play(8,13,1,1,38,38,38)
+
+setup_select(3)
+setup_next(1)
+setup_select(4)
+setup_next(1)
+setup_select(3)
+setup_next(1)
+setup_select(2)
+setup_next(5)
+
+pass
+move(E,1)
+pass
+
+special
+special
+move(G,2)
+fire

@@ -1,0 +1,19 @@
+--Test Repair at low health.
+toggle_debug_mode
+
+play(5,10,2,2,2,2,2)
+setup_select(3)
+setup_next(1)
+setup_select(4)
+setup_next(2)
+setup_select(2)
+setup_next(1)
+setup_next(1)
+
+move(A,1)
+pass
+pass
+pass
+pass
+special
+special

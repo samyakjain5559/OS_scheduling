@@ -1,0 +1,12 @@
+play(6,11,8,3)
+move(A,1)
+move(A,2)
+undo
+redo
+undo
+fire
+move(A,9)
+undo
+fire
+
+

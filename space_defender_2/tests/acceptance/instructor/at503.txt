@@ -1,0 +1,19 @@
+--Test Starfighter destroyed on enemy act phase.
+toggle_debug_mode
+play(10,30,25,50,75,75,101)
+setup_next(5)
+
+move(C,1)
+move(B,1)
+move(C,1)
+move(B,1)
+move(C,1)
+move(B,1)
+move(C,1)
+move(B,1)
+move(C,1)
+move(B,1)
+move(C,9)
+move(C,15)
+move(B,15)
+pass

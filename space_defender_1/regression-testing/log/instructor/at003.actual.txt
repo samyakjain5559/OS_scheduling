@@ -1,0 +1,33 @@
+  Welcome to Space Defender Version 1.
+->abort
+  state:0.1, error
+  Not in game.
+->undo
+  state:0.2, error
+  Not in game.
+->redo
+  state:0.3, error
+  Not in game.
+->pass
+  state:0.4, error
+  Not in game.
+->fire
+  state:0.5, error
+  Not in game.
+->move(A,1)
+  state:0.6, error
+  Not in game.
+->play(5,10,5,3)
+  state:1.0, ok
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _
+    C S  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _
+->play(5,10,5,3)
+  state:1.1, error
+  Please end the current game before starting a new one.
+->move(C,1)
+  state:1.2, error
+  The Starfighter is already at that location.

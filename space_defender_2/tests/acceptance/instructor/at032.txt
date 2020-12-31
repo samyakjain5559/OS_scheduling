@@ -1,0 +1,6 @@
+--Test quiting from setup process and specifying new board sizes creates a board with different size.
+play(6,17,1,1,1,1,1)
+setup_back(5)
+
+play(9,12,1,1,1,1,1)
+setup_next(5)

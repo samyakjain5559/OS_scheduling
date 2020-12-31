@@ -1,0 +1,11 @@
+--Test enemy carrier pass prempt.
+toggle_debug_mode
+
+play(10,25,1,1,38,38,38)
+setup_next(5)
+
+pass
+pass
+pass
+pass
+pass

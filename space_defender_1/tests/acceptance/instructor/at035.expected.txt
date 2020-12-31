@@ -1,0 +1,99 @@
+  Welcome to Space Defender Version 1.
+->play(5,5,7,3)
+  state:1.0, ok
+      1  2  3  4  5
+    A _  _  _  _  _
+    B _  _  _  _  _
+    C S  _  _  _  _
+    D _  _  _  _  _
+    E _  _  _  _  _
+->move(A,5)
+  state:2.0, ok
+  The Starfighter moves: [C,1] -> [A,5]
+      1  2  3  4  5
+    A _  _  _  _  S
+    B _  _  _  _  _
+    C _  _  _  _  _
+    D _  _  _  _  _
+    E _  _  _  _  _
+->fire
+  state:3.0, ok
+  The Starfighter fires a projectile at: [A,5]
+      1  2  3  4  5
+    A _  _  _  _  S
+    B _  _  _  _  _
+    C _  _  _  _  _
+    D _  _  _  _  _
+    E _  _  _  _  _
+->move(B,5)
+  state:4.0, ok
+  The Starfighter moves: [A,5] -> [B,5]
+      1  2  3  4  5
+    A _  _  _  _  _
+    B _  _  _  _  S
+    C _  _  _  _  _
+    D _  _  _  _  _
+    E _  _  _  _  _
+->fire
+  state:5.0, ok
+  The Starfighter fires a projectile at: [B,5]
+      1  2  3  4  5
+    A _  _  _  _  _
+    B _  _  _  _  S
+    C _  _  _  _  _
+    D _  _  _  _  _
+    E _  _  _  _  _
+->move(C,5)
+  state:6.0, ok
+  The Starfighter moves: [B,5] -> [C,5]
+      1  2  3  4  5
+    A _  _  _  _  _
+    B _  _  _  _  _
+    C _  _  _  _  S
+    D _  _  _  _  _
+    E _  _  _  _  _
+->fire
+  state:7.0, ok
+  The Starfighter fires a projectile at: [C,5]
+      1  2  3  4  5
+    A _  _  _  _  _
+    B _  _  _  _  _
+    C _  _  _  _  S
+    D _  _  _  _  _
+    E _  _  _  _  _
+->move(D,5)
+  state:8.0, ok
+  The Starfighter moves: [C,5] -> [D,5]
+      1  2  3  4  5
+    A _  _  _  _  _
+    B _  _  _  _  _
+    C _  _  _  _  _
+    D _  _  _  _  S
+    E _  _  _  _  _
+->fire
+  state:9.0, ok
+  The Starfighter fires a projectile at: [D,5]
+      1  2  3  4  5
+    A _  _  _  _  _
+    B _  _  _  _  _
+    C _  _  _  _  _
+    D _  _  _  _  S
+    E _  _  _  _  _
+->move(E,5)
+  state:10.0, ok
+  The Starfighter moves: [D,5] -> [E,5]
+      1  2  3  4  5
+    A _  _  _  _  _
+    B _  _  _  _  _
+    C _  _  _  _  _
+    D _  _  _  _  _
+    E _  _  _  _  S
+->fire
+  state:11.0, ok
+  The Starfighter fires a projectile at: [E,5]
+      1  2  3  4  5
+    A _  _  _  _  _
+    B _  _  _  _  _
+    C _  _  _  _  _
+    D _  _  _  _  _
+    E _  _  _  _  S

@@ -1,0 +1,20 @@
+--Test firing Splitter out of board.
+play(10,30,1,1,1,1,1)
+setup_select(5)
+setup_next(5)
+
+toggle_debug_mode
+move(E,10)
+move(E,19)
+move(E,20)
+move(E,21)
+move(E,22)
+move(E,23)
+move(E,24)
+move(E,25)
+move(E,26)
+move(E,27)
+move(E,28)
+move(E,29)
+move(J,30)
+fire

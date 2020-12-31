@@ -1,0 +1,43 @@
+MESSAGES
+Below are messages that may appear during normal operation of the game.
+
+1. "Welcome to Space Defender Version 1." (Initial message.)
+2. "Game has been exited." (Abort message.)
+3. "The Starfighter moves: [A,B] -> [X,Y]" (Movement of Starfighter, origin to destination. A and X is the row and B and Y is the column.)
+4. "The Starfighter moves and collides with a projectile: [A,B] -> [X,Y]" (Same as previous one, but [X,Y] is where the collision occurred.)
+5. "The Starfighter fires a projectile at: [X,Y]" ([X,Y] is the location of the Starfighter when it fires a projectile.)
+6. "The Starfighter stays at: [X,Y]" ([X,Y] is the location of the Starfighter when a pass command is used.)
+7. "A projectile moves: [A,B] -> [X,Y]" (Movement of a projectile, origin to destination. A and X is the row and B and Y is the column. Note [X,Y] can be "out of the board" if the projectile goes beyond the confines of the grid.)
+8. "A projectile moves and collides with the Starfighter: [A,B] -> [X,Y]" (Same as previous one, but [X,Y] is where the collision occurred.)
+9. "The game is over. Better luck next time!" (Game over due to Starfighter being destroyed.)
+
+ERROR
+Below are error messages, listed in priority (highest to lowest) for each command.
+
+Abort
+1. "Not in game." (Game needs to be started before the command can be used.)
+
+Fire
+1. "Not in game." (Game needs to be started before the command can be used.)
+
+Move
+1. "Not in game." (Game needs to be started before the command can be used.)
+2. "The location to move to is outside of the board." (Location to move to is outside of specified board size.)
+3. "The location to move to is out of the Starfighter's movement range." (Location to move to is outside of the specified Starfighter's movement range.)
+4. "The Starfighter is already at that location." (Location to move to is where the Starfighter is already at.)
+
+Pass
+1. "Not in game." (Game needs to be started before the command can be used.)
+
+Play
+1. "Please end the current game before starting a new one." (The command can only be used before the game has started.)
+2. "Starfighter movement should not exceed row - 1 + column - 1 size of the board." (Movement parameter for the Starfighter is too large based on board size.)
+
+Redo
+1. "Not in game." (Game needs to be started before the command can be used.)
+2. "Nothing left to redo."
+
+Undo
+1. "Not in game." (Game needs to be started before the command can be used.)
+2. "Nothing left to undo."
+

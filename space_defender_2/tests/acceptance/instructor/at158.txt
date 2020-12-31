@@ -1,0 +1,19 @@
+--Test Overcharge multiple times at full energy and using energy.
+toggle_debug_mode
+
+play(10,10,1,1,1,1,1)
+setup_select(3)
+setup_next(1)
+setup_select(4)
+setup_next(2)
+setup_select(3)
+setup_next(1)
+setup_next(1)
+
+
+special
+fire
+move(D,1)
+special
+fire
+move(D,2)

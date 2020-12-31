@@ -1,0 +1,10 @@
+--Test destroying enemy pylon.
+toggle_debug_mode
+
+play(5,12,1,1,1,1,2)
+setup_select(3)
+setup_next(5)
+
+move(A,1)
+fire
+fire

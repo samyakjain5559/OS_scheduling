@@ -1,0 +1,11 @@
+--Test enemy spawning does not occur due to being blocked.
+toggle_debug_mode
+play(5,30,1,1,40,40,40)
+setup_select(2)
+setup_next(5)
+
+fire
+fire
+fire
+pass
+pass

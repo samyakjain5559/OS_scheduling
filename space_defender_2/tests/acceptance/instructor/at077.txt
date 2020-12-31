@@ -1,0 +1,8 @@
+--Test firing Rocket.
+play(5,10,1,1,1,1,1)
+setup_select(4)
+setup_next(5)
+
+toggle_debug_mode
+move(C,2)
+fire

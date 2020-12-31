@@ -1,0 +1,26 @@
+--Test full pylon focus.
+toggle_debug_mode
+play(10,12,20,40,40,60,101)
+
+setup_select(3)
+setup_next(2)
+setup_select(2)
+setup_next(1)
+setup_select(2)
+setup_next(1)
+setup_next(1)
+
+
+
+special
+pass
+pass
+pass
+move(D,1)
+fire
+pass
+move(D,4)
+pass
+move(F,11)
+fire
+

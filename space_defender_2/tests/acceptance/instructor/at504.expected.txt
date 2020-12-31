@@ -1,0 +1,1879 @@
+  state:not started, normal, ok
+  Welcome to Space Defender Version 2.
+->toggle_debug_mode
+  state:not started, debug, ok
+  In debug mode.
+->play(10,10,20,40,60,80,101)
+  state:weapon setup, debug, ok
+  1:Standard (A single projectile is fired in front)
+    Health:10, Energy:10, Regen:0/1, Armour:0, Vision:1, Move:1, Move Cost:1,
+    Projectile Damage:70, Projectile Cost:5 (energy)
+  2:Spread (Three projectiles are fired in front, two going diagonal)
+    Health:0, Energy:60, Regen:0/2, Armour:1, Vision:0, Move:0, Move Cost:2,
+    Projectile Damage:50, Projectile Cost:10 (energy)
+  3:Snipe (Fast and high damage projectile, but only travels via teleporting)
+    Health:0, Energy:100, Regen:0/5, Armour:0, Vision:10, Move:3, Move Cost:0,
+    Projectile Damage:1000, Projectile Cost:20 (energy)
+  4:Rocket (Two projectiles appear behind to the sides of the Starfighter and accelerates)
+    Health:10, Energy:0, Regen:10/0, Armour:2, Vision:2, Move:0, Move Cost:3,
+    Projectile Damage:100, Projectile Cost:10 (health)
+  5:Splitter (A single mine projectile is placed in front of the Starfighter)
+    Health:0, Energy:100, Regen:0/10, Armour:0, Vision:0, Move:0, Move Cost:5,
+    Projectile Damage:150, Projectile Cost:70 (energy)
+  Weapon Selected:Standard
+->setup_next(5)
+  state:in game(0.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[E,1]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+  Projectile:
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+  Starfighter Action:
+  Enemy Action:
+  Natural Enemy Spawn:
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _
+    E S  _  _  _  _  _  _  _  _  _
+    F _  _  _  _  _  _  _  _  _  _
+    G _  _  _  _  _  _  _  _  _  _
+    H _  _  _  _  _  _  _  _  _  _
+    I _  _  _  _  _  _  _  _  _  _
+    J _  _  _  _  _  _  _  _  _  _
+->move(J,1)
+  state:in game(1.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:55/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,1]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [1,G]->health:100/100, Regen:1, Armour:1, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,10]
+  Projectile:
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+  Starfighter Action:
+    The Starfighter(id:0) moves: [E,1] -> [J,1]
+  Enemy Action:
+  Natural Enemy Spawn:
+    A Grunt(id:1) spawns at location [A,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  _  _  _  _  _  _  G
+    B _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _
+    F _  _  _  _  _  _  _  _  _  _
+    G _  _  _  _  _  _  _  _  _  _
+    H _  _  _  _  _  _  _  _  _  _
+    I _  _  _  _  _  _  _  _  _  _
+    J S  _  _  _  _  _  _  _  _  _
+->move(J,10)
+  state:in game(2.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:31/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [1,G]->health:100/100, Regen:1, Armour:1, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[A,8]
+    [2,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[A,10]
+  Projectile:
+    [-1,<]->damage:15, move:4, location:[A,7]
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+  Starfighter Action:
+    The Starfighter(id:0) moves: [J,1] -> [J,10]
+  Enemy Action:
+    A Grunt(id:1) moves: [A,10] -> [A,8]
+      A enemy projectile(id:-1) spawns at location [A,7].
+  Natural Enemy Spawn:
+    A Fighter(id:2) spawns at location [A,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  _  _  _  <  G  _  F
+    B _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _
+    F _  _  _  _  _  _  _  _  _  _
+    G _  _  _  _  _  _  _  _  _  _
+    H _  _  _  _  _  _  _  _  _  _
+    I _  _  _  _  _  _  _  _  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(3.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:37/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [1,G]->health:110/110, Regen:1, Armour:1, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[A,6]
+    [2,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[A,9]
+    [3,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,10]
+  Projectile:
+    [-1,<]->damage:15, move:4, location:[A,3]
+    [-3,<]->damage:15, move:4, location:[A,5]
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+    A enemy projectile(id:-1) moves: [A,7] -> [A,3]
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Grunt(id:1) gains 10 total health.
+    A Fighter(id:2) moves: [A,10] -> [A,9]
+      A enemy projectile(id:-2) spawns at location [A,8].
+      The projectile collides with Grunt(id:1) at location [A,8], healing 100 damage.
+    A Grunt(id:1) moves: [A,8] -> [A,6]
+      A enemy projectile(id:-3) spawns at location [A,5].
+  Natural Enemy Spawn:
+    A Carrier(id:3) spawns at location [H,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  <  _  <  G  _  _  F  _
+    B _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _
+    F _  _  _  _  _  _  _  _  _  _
+    G _  _  _  _  _  _  _  _  _  _
+    H _  _  _  _  _  _  _  _  _  C
+    I _  _  _  _  _  _  _  _  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(4.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:43/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [1,G]->health:120/120, Regen:1, Armour:1, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,4]
+    [2,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:F, location:[A,7]
+    [3,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,8]
+    [4,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,8]
+    [5,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,8]
+    [6,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,10]
+  Projectile:
+    [-3,<]->damage:15, move:4, location:[A,1]
+    [-5,<]->damage:15, move:4, location:[A,3]
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+    A enemy projectile(id:-1) moves: [A,3] -> out of board
+    A enemy projectile(id:-3) moves: [A,5] -> [A,1]
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Grunt(id:1) gains 10 total health.
+    A Fighter(id:2) moves: [A,9] -> [A,7]
+      A enemy projectile(id:-4) spawns at location [A,6].
+      The projectile collides with Grunt(id:1) at location [A,6], healing 100 damage.
+    A Carrier(id:3) moves: [H,10] -> [H,8]
+      A Interceptor(id:4) spawns at location [G,8].
+      A Interceptor(id:5) spawns at location [I,8].
+    A Grunt(id:1) moves: [A,6] -> [A,4]
+      A enemy projectile(id:-5) spawns at location [A,3].
+  Natural Enemy Spawn:
+    A Fighter(id:6) spawns at location [G,10].
+      1  2  3  4  5  6  7  8  9 10
+    A <  _  <  G  _  _  F  _  _  _
+    B _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  _
+    F _  _  _  _  _  _  _  _  _  _
+    G _  _  _  _  _  _  _  I  _  F
+    H _  _  _  _  _  _  _  C  _  _
+    I _  _  _  _  _  _  _  I  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(5.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:49/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [1,G]->health:130/130, Regen:1, Armour:1, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,2]
+    [2,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,5]
+    [3,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,6]
+    [4,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,7]
+    [5,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,7]
+    [6,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,9]
+    [7,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,6]
+    [8,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,6]
+    [9,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,10]
+  Projectile:
+    [-8,<]->damage:15, move:4, location:[A,1]
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+    A enemy projectile(id:-3) moves: [A,1] -> out of board
+    A enemy projectile(id:-5) moves: [A,3] -> out of board
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Grunt(id:1) gains 10 total health.
+    A Fighter(id:2) moves: [A,7] -> [A,5]
+      A enemy projectile(id:-6) spawns at location [A,4].
+      The projectile collides with Grunt(id:1) at location [A,4], healing 100 damage.
+    A Carrier(id:3) moves: [H,8] -> [H,6]
+      A Interceptor(id:7) spawns at location [G,6].
+      A Interceptor(id:8) spawns at location [I,6].
+    A Fighter(id:6) moves: [G,10] -> [G,9]
+      A enemy projectile(id:-7) spawns at location [G,8].
+      The projectile collides with Interceptor(id:4) at location [G,8], healing 100 damage.
+    A Grunt(id:1) moves: [A,4] -> [A,2]
+      A enemy projectile(id:-8) spawns at location [A,1].
+    A Interceptor(id:4) moves: [G,8] -> [G,7]
+    A Interceptor(id:5) moves: [I,8] -> [I,7]
+  Natural Enemy Spawn:
+    A Interceptor(id:9) spawns at location [D,10].
+      1  2  3  4  5  6  7  8  9 10
+    A <  G  _  _  F  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  I
+    E _  _  _  _  _  _  _  _  _  _
+    F _  _  _  _  _  _  _  _  _  _
+    G _  _  _  _  _  I  I  _  F  _
+    H _  _  _  _  _  C  _  _  _  _
+    I _  _  _  _  _  I  I  _  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(6.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:55/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [2,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,3]
+    [3,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,4]
+    [4,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,7]
+    [5,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,7]
+    [6,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,8]
+    [7,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,5]
+    [8,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,5]
+    [9,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,7]
+    [10,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,4]
+    [11,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,4]
+    [12,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,10]
+  Projectile:
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+    A enemy projectile(id:-8) moves: [A,1] -> out of board
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Grunt(id:1) gains 10 total health.
+    A Fighter(id:2) moves: [A,5] -> [A,3]
+      A enemy projectile(id:-9) spawns at location [A,2].
+      The projectile collides with Grunt(id:1) at location [A,2], healing 100 damage.
+    A Carrier(id:3) moves: [H,6] -> [H,4]
+      A Interceptor(id:10) spawns at location [G,4].
+      A Interceptor(id:11) spawns at location [I,4].
+    A Fighter(id:6) moves: [G,9] -> [G,8]
+      A enemy projectile(id:-10) spawns at location [G,7].
+      The projectile collides with Interceptor(id:4) at location [G,7], healing 100 damage.
+    A Grunt(id:1) moves: [A,2] -> out of board
+    A Interceptor(id:4) stays at: [G,7]
+    A Interceptor(id:5) stays at: [I,7]
+    A Interceptor(id:7) moves: [G,6] -> [G,5]
+    A Interceptor(id:8) moves: [I,6] -> [I,5]
+    A Interceptor(id:9) moves: [D,10] -> [D,7]
+  Natural Enemy Spawn:
+    A Carrier(id:12) spawns at location [F,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  F  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  I  _  _  _
+    E _  _  _  _  _  _  _  _  _  _
+    F _  _  _  _  _  _  _  _  _  C
+    G _  _  _  I  I  _  I  F  _  _
+    H _  _  _  C  _  _  _  _  _  _
+    I _  _  _  I  I  _  I  _  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(7.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:61/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [3,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,2]
+    [4,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,6]
+    [5,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,6]
+    [6,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,8]
+    [7,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,5]
+    [8,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,5]
+    [9,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,4]
+    [10,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,3]
+    [11,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,3]
+    [12,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,8]
+    [13,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,2]
+    [14,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,2]
+    [15,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,8]
+    [16,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[B,10]
+  Projectile:
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Fighter(id:2) moves: [A,3] -> out of board
+    A Carrier(id:3) moves: [H,4] -> [H,2]
+      A Interceptor(id:13) spawns at location [G,2].
+      A Interceptor(id:14) spawns at location [I,2].
+    A Fighter(id:6) stays at: [G,8]
+      A enemy projectile(id:-11) spawns at location [G,7].
+      The projectile collides with Interceptor(id:4) at location [G,7], healing 100 damage.
+    A Carrier(id:12) moves: [F,10] -> [F,8]
+      A Interceptor(id:15) spawns at location [E,8].
+    A Interceptor(id:4) moves: [G,7] -> [G,6]
+    A Interceptor(id:5) moves: [I,7] -> [I,6]
+    A Interceptor(id:7) stays at: [G,5]
+    A Interceptor(id:8) stays at: [I,5]
+    A Interceptor(id:9) moves: [D,7] -> [D,4]
+    A Interceptor(id:10) moves: [G,4] -> [G,3]
+    A Interceptor(id:11) moves: [I,4] -> [I,3]
+  Natural Enemy Spawn:
+    A Carrier(id:16) spawns at location [B,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  C
+    C _  _  _  _  _  _  _  _  _  _
+    D _  _  _  I  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  I  _  _
+    F _  _  _  _  _  _  _  C  _  _
+    G _  I  I  _  I  I  _  F  _  _
+    H _  C  _  _  _  _  _  _  _  _
+    I _  I  I  _  I  I  _  _  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(8.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:67/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [4,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,6]
+    [5,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,6]
+    [6,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,7]
+    [7,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,4]
+    [8,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,4]
+    [9,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[D,1]
+    [10,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,3]
+    [11,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,3]
+    [12,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,6]
+    [15,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,7]
+    [16,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[B,8]
+    [17,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,6]
+    [18,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[A,8]
+    [19,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,8]
+    [20,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[E,10]
+  Projectile:
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Carrier(id:3) moves: [H,2] -> out of board
+    A Fighter(id:6) moves: [G,8] -> [G,7]
+      A enemy projectile(id:-12) spawns at location [G,6].
+      The projectile collides with Interceptor(id:4) at location [G,6], healing 100 damage.
+    A Carrier(id:12) moves: [F,8] -> [F,6]
+      A Interceptor(id:17) spawns at location [E,6].
+    A Carrier(id:16) moves: [B,10] -> [B,8]
+      A Interceptor(id:18) spawns at location [A,8].
+      A Interceptor(id:19) spawns at location [C,8].
+    A Interceptor(id:4) stays at: [G,6]
+    A Interceptor(id:5) stays at: [I,6]
+    A Interceptor(id:7) moves: [G,5] -> [G,4]
+    A Interceptor(id:8) moves: [I,5] -> [I,4]
+    A Interceptor(id:9) moves: [D,4] -> [D,1]
+    A Interceptor(id:10) stays at: [G,3]
+    A Interceptor(id:11) stays at: [I,3]
+    A Interceptor(id:13) moves: [G,2] -> out of board
+    A Interceptor(id:14) moves: [I,2] -> out of board
+    A Interceptor(id:15) moves: [E,8] -> [E,7]
+  Natural Enemy Spawn:
+    A Fighter(id:20) spawns at location [E,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  _  _  _  _  I  _  _
+    B _  _  _  _  _  _  _  C  _  _
+    C _  _  _  _  _  _  _  I  _  _
+    D I  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  I  I  _  _  F
+    F _  _  _  _  _  C  _  _  _  _
+    G _  _  I  I  _  I  F  _  _  _
+    H _  _  _  _  _  _  _  _  _  _
+    I _  _  I  I  _  I  _  _  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(9.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [4,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,5]
+    [5,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,5]
+    [6,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,7]
+    [7,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,4]
+    [8,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,4]
+    [12,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,4]
+    [15,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,7]
+    [16,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[B,6]
+    [17,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,5]
+    [18,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[A,7]
+    [19,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,7]
+    [20,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[E,8]
+    [21,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,4]
+    [22,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[A,6]
+    [23,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,6]
+    [24,G]->health:100/100, Regen:1, Armour:1, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,10]
+  Projectile:
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Fighter(id:6) stays at: [G,7]
+      A enemy projectile(id:-13) spawns at location [G,6].
+      The projectile collides with Interceptor(id:4) at location [G,6], healing 100 damage.
+    A Carrier(id:12) moves: [F,6] -> [F,4]
+      A Interceptor(id:21) spawns at location [E,4].
+    A Carrier(id:16) moves: [B,8] -> [B,6]
+      A Interceptor(id:22) spawns at location [A,6].
+      A Interceptor(id:23) spawns at location [C,6].
+    A Fighter(id:20) moves: [E,10] -> [E,8]
+      A enemy projectile(id:-14) spawns at location [E,7].
+      The projectile collides with Interceptor(id:15) at location [E,7], healing 100 damage.
+    A Interceptor(id:4) moves: [G,6] -> [G,5]
+    A Interceptor(id:5) moves: [I,6] -> [I,5]
+    A Interceptor(id:7) stays at: [G,4]
+    A Interceptor(id:8) stays at: [I,4]
+    A Interceptor(id:9) moves: [D,1] -> out of board
+    A Interceptor(id:10) moves: [G,3] -> out of board
+    A Interceptor(id:11) moves: [I,3] -> out of board
+    A Interceptor(id:15) stays at: [E,7]
+    A Interceptor(id:17) moves: [E,6] -> [E,5]
+    A Interceptor(id:18) moves: [A,8] -> [A,7]
+    A Interceptor(id:19) moves: [C,8] -> [C,7]
+  Natural Enemy Spawn:
+    A Grunt(id:24) spawns at location [C,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  _  _  I  I  _  _  _
+    B _  _  _  _  _  C  _  _  _  _
+    C _  _  _  _  _  I  I  _  _  G
+    D _  _  _  _  _  _  _  _  _  _
+    E _  _  _  I  I  _  I  F  _  _
+    F _  _  _  C  _  _  _  _  _  _
+    G _  _  _  I  I  _  F  _  _  _
+    H _  _  _  _  _  _  _  _  _  _
+    I _  _  _  I  I  _  _  _  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(10.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [4,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,5]
+    [5,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,5]
+    [6,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,6]
+    [7,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,3]
+    [8,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,1]
+    [12,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,2]
+    [15,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,6]
+    [16,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:F, can_see_Starfighter:T, location:[B,4]
+    [17,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,5]
+    [18,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[A,7]
+    [19,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,7]
+    [20,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[E,8]
+    [21,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,3]
+    [22,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,5]
+    [23,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,5]
+    [24,G]->health:110/110, Regen:1, Armour:1, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,8]
+    [25,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,2]
+    [26,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,2]
+    [27,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,4]
+    [28,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,4]
+    [29,P]->health:300/300, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,10]
+  Projectile:
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Fighter(id:6) moves: [G,7] -> [G,6]
+      A enemy projectile(id:-15) spawns at location [G,5].
+      The projectile collides with Interceptor(id:4) at location [G,5], healing 100 damage.
+    A Carrier(id:12) moves: [F,4] -> [F,2]
+      A Interceptor(id:25) spawns at location [E,2].
+      A Interceptor(id:26) spawns at location [G,2].
+    A Carrier(id:16) moves: [B,6] -> [B,4]
+      A Interceptor(id:27) spawns at location [A,4].
+      A Interceptor(id:28) spawns at location [C,4].
+    A Fighter(id:20) stays at: [E,8]
+      A enemy projectile(id:-16) spawns at location [E,7].
+      The projectile collides with Interceptor(id:15) at location [E,7], healing 100 damage.
+    A Grunt(id:24) gains 10 total health.
+    A Interceptor(id:4) stays at: [G,5]
+    A Interceptor(id:5) stays at: [I,5]
+    A Interceptor(id:7) moves: [G,4] -> [G,3]
+    A Interceptor(id:8) moves: [I,4] -> [I,1]
+    A Interceptor(id:15) moves: [E,7] -> [E,6]
+    A Interceptor(id:17) stays at: [E,5]
+    A Interceptor(id:18) stays at: [A,7]
+    A Interceptor(id:19) stays at: [C,7]
+    A Interceptor(id:21) moves: [E,4] -> [E,3]
+    A Interceptor(id:22) moves: [A,6] -> [A,5]
+    A Interceptor(id:23) moves: [C,6] -> [C,5]
+    A Grunt(id:24) moves: [C,10] -> [C,8]
+      A enemy projectile(id:-17) spawns at location [C,7].
+      The projectile collides with Interceptor(id:19) at location [C,7], healing 15 damage.
+  Natural Enemy Spawn:
+    A Pylon(id:29) spawns at location [F,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  I  I  _  I  _  _  _
+    B _  _  _  C  _  _  _  _  _  _
+    C _  _  _  I  I  _  I  G  _  _
+    D _  _  _  _  _  _  _  _  _  _
+    E _  I  I  _  I  I  _  F  _  _
+    F _  C  _  _  _  _  _  _  _  P
+    G _  I  I  _  I  F  _  _  _  _
+    H _  _  _  _  _  _  _  _  _  _
+    I I  _  _  _  I  _  _  _  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(11.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [4,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,4]
+    [5,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,2]
+    [6,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,6]
+    [7,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,3]
+    [15,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,6]
+    [16,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:F, can_see_Starfighter:F, location:[B,2]
+    [17,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,4]
+    [18,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[A,6]
+    [19,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,6]
+    [20,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[E,7]
+    [21,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,3]
+    [22,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,5]
+    [23,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,5]
+    [24,G]->health:120/120, Regen:1, Armour:1, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,7]
+    [27,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,3]
+    [28,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[C,3]
+    [29,P]->health:300/300, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,9]
+    [30,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,2]
+    [31,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[C,2]
+    [32,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,10]
+  Projectile:
+    [-21,<]->damage:70, move:2, location:[F,8]
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Fighter(id:6) stays at: [G,6]
+      A enemy projectile(id:-18) spawns at location [G,5].
+      The projectile collides with Interceptor(id:4) at location [G,5], healing 100 damage.
+    A Carrier(id:12) moves: [F,2] -> out of board
+    A Carrier(id:16) moves: [B,4] -> [B,2]
+      A Interceptor(id:30) spawns at location [A,2].
+      A Interceptor(id:31) spawns at location [C,2].
+    A Fighter(id:20) moves: [E,8] -> [E,7]
+      A enemy projectile(id:-19) spawns at location [E,6].
+      The projectile collides with Interceptor(id:15) at location [E,6], healing 100 damage.
+    A Grunt(id:24) gains 10 total health.
+    A Interceptor(id:4) moves: [G,5] -> [G,4]
+    A Interceptor(id:5) moves: [I,5] -> [I,2]
+    A Interceptor(id:7) stays at: [G,3]
+    A Interceptor(id:8) moves: [I,1] -> out of board
+    A Interceptor(id:15) stays at: [E,6]
+    A Interceptor(id:17) moves: [E,5] -> [E,4]
+    A Interceptor(id:18) moves: [A,7] -> [A,6]
+    A Interceptor(id:19) moves: [C,7] -> [C,6]
+    A Interceptor(id:21) stays at: [E,3]
+    A Interceptor(id:22) stays at: [A,5]
+    A Interceptor(id:23) stays at: [C,5]
+    A Grunt(id:24) moves: [C,8] -> [C,7]
+      A enemy projectile(id:-20) spawns at location [C,6].
+      The projectile collides with Interceptor(id:19) at location [C,6], healing 15 damage.
+    A Interceptor(id:25) moves: [E,2] -> out of board
+    A Interceptor(id:26) moves: [G,2] -> out of board
+    A Interceptor(id:27) moves: [A,4] -> [A,3]
+    A Interceptor(id:28) moves: [C,4] -> [C,3]
+    A Pylon(id:29) moves: [F,10] -> [F,9]
+      A enemy projectile(id:-21) spawns at location [F,8].
+  Natural Enemy Spawn:
+    A Carrier(id:32) spawns at location [F,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  I  I  _  I  I  _  _  _  _
+    B _  C  _  _  _  _  _  _  _  _
+    C _  I  I  _  I  I  G  _  _  _
+    D _  _  _  _  _  _  _  _  _  _
+    E _  _  I  I  _  I  F  _  _  _
+    F _  _  _  _  _  _  _  <  P  C
+    G _  _  I  I  _  F  _  _  _  _
+    H _  _  _  _  _  _  _  _  _  _
+    I _  I  _  _  _  _  _  _  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(12.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [4,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,4]
+    [6,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,5]
+    [15,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,5]
+    [17,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,4]
+    [18,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[A,6]
+    [19,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,6]
+    [20,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[E,7]
+    [22,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,4]
+    [23,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,4]
+    [24,G]->health:130/130, Regen:1, Armour:1, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,7]
+    [27,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,3]
+    [28,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[C,3]
+    [29,P]->health:300/300, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[F,8]
+    [32,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,10]
+    [33,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[E,10]
+    [34,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,10]
+    [35,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[A,10]
+  Projectile:
+    [-21,<]->damage:70, move:2, location:[F,6]
+    [-25,<]->damage:70, move:2, location:[F,7]
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+    A enemy projectile(id:-21) moves: [F,8] -> [F,6]
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Fighter(id:6) moves: [G,6] -> [G,5]
+      A enemy projectile(id:-22) spawns at location [G,4].
+      The projectile collides with Interceptor(id:4) at location [G,4], healing 100 damage.
+    A Carrier(id:16) moves: [B,2] -> out of board
+    A Fighter(id:20) stays at: [E,7]
+      A enemy projectile(id:-23) spawns at location [E,6].
+      The projectile collides with Interceptor(id:15) at location [E,6], healing 100 damage.
+    A Grunt(id:24) gains 10 total health.
+    A Carrier(id:32) stays at: [F,10]
+      A Interceptor(id:33) spawns at location [E,10].
+      A Interceptor(id:34) spawns at location [G,10].
+    A Interceptor(id:4) stays at: [G,4]
+    A Interceptor(id:5) moves: [I,2] -> out of board
+    A Interceptor(id:7) moves: [G,3] -> out of board
+    A Interceptor(id:15) moves: [E,6] -> [E,5]
+    A Interceptor(id:17) stays at: [E,4]
+    A Interceptor(id:18) stays at: [A,6]
+    A Interceptor(id:19) stays at: [C,6]
+    A Interceptor(id:21) moves: [E,3] -> out of board
+    A Interceptor(id:22) moves: [A,5] -> [A,4]
+    A Interceptor(id:23) moves: [C,5] -> [C,4]
+    A Grunt(id:24) stays at: [C,7]
+      A enemy projectile(id:-24) spawns at location [C,6].
+      The projectile collides with Interceptor(id:19) at location [C,6], healing 15 damage.
+    A Interceptor(id:27) stays at: [A,3]
+    A Interceptor(id:28) stays at: [C,3]
+    A Pylon(id:29) moves: [F,9] -> [F,8]
+      A enemy projectile(id:-25) spawns at location [F,7].
+    A Interceptor(id:30) moves: [A,2] -> out of board
+    A Interceptor(id:31) moves: [C,2] -> out of board
+  Natural Enemy Spawn:
+    A Interceptor(id:35) spawns at location [A,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  I  I  _  I  _  _  _  I
+    B _  _  _  _  _  _  _  _  _  _
+    C _  _  I  I  _  I  G  _  _  _
+    D _  _  _  _  _  _  _  _  _  _
+    E _  _  _  I  I  _  F  _  _  I
+    F _  _  _  _  _  <  <  P  _  C
+    G _  _  _  I  F  _  _  _  _  I
+    H _  _  _  _  _  _  _  _  _  _
+    I _  _  _  _  _  _  _  _  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(13.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [4,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,1]
+    [6,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,5]
+    [15,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,5]
+    [17,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[E,1]
+    [18,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,5]
+    [19,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,5]
+    [20,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[E,6]
+    [22,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,4]
+    [23,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,4]
+    [24,G]->health:140/140, Regen:1, Armour:1, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,6]
+    [29,P]->health:300/300, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[F,6]
+    [32,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,9]
+    [33,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[E,10]
+    [34,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,10]
+    [35,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[A,7]
+    [36,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,9]
+    [37,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,9]
+    [38,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[D,10]
+  Projectile:
+    [-21,<]->damage:70, move:2, location:[F,4]
+    [-25,<]->damage:70, move:2, location:[F,5]
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+    A enemy projectile(id:-21) moves: [F,6] -> [F,4]
+    A enemy projectile(id:-25) moves: [F,7] -> [F,5]
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Fighter(id:6) stays at: [G,5]
+      A enemy projectile(id:-26) spawns at location [G,4].
+      The projectile collides with Interceptor(id:4) at location [G,4], healing 100 damage.
+    A Fighter(id:20) moves: [E,7] -> [E,6]
+      A enemy projectile(id:-27) spawns at location [E,5].
+      The projectile collides with Interceptor(id:15) at location [E,5], healing 100 damage.
+    A Grunt(id:24) gains 10 total health.
+    A Carrier(id:32) moves: [F,10] -> [F,9]
+      A Interceptor(id:36) spawns at location [E,9].
+      A Interceptor(id:37) spawns at location [G,9].
+    A Interceptor(id:4) moves: [G,4] -> [G,1]
+    A Interceptor(id:15) stays at: [E,5]
+    A Interceptor(id:17) moves: [E,4] -> [E,1]
+    A Interceptor(id:18) moves: [A,6] -> [A,5]
+    A Interceptor(id:19) moves: [C,6] -> [C,5]
+    A Interceptor(id:22) stays at: [A,4]
+    A Interceptor(id:23) stays at: [C,4]
+    A Grunt(id:24) moves: [C,7] -> [C,6]
+      A enemy projectile(id:-28) spawns at location [C,5].
+      The projectile collides with Interceptor(id:19) at location [C,5], healing 15 damage.
+    A Interceptor(id:27) moves: [A,3] -> out of board
+    A Interceptor(id:28) moves: [C,3] -> out of board
+    A Pylon(id:29) moves: [F,8] -> [F,6]
+      The Pylon heals Fighter(id:6) at location [G,5] for 10 damage.
+      The Pylon heals Interceptor(id:15) at location [E,5] for 10 damage.
+      The Pylon heals Interceptor(id:19) at location [C,5] for 10 damage.
+      The Pylon heals Fighter(id:20) at location [E,6] for 10 damage.
+      The Pylon heals Interceptor(id:23) at location [C,4] for 10 damage.
+      The Pylon heals Grunt(id:24) at location [C,6] for 10 damage.
+      The Pylon heals Pylon(id:29) at location [F,6] for 10 damage.
+      The Pylon heals Carrier(id:32) at location [F,9] for 10 damage.
+      The Pylon heals Interceptor(id:33) at location [E,10] for 10 damage.
+      The Pylon heals Interceptor(id:34) at location [G,10] for 10 damage.
+      The Pylon heals Interceptor(id:36) at location [E,9] for 10 damage.
+      The Pylon heals Interceptor(id:37) at location [G,9] for 10 damage.
+    A Interceptor(id:33) stays at: [E,10]
+    A Interceptor(id:34) stays at: [G,10]
+    A Interceptor(id:35) moves: [A,10] -> [A,7]
+  Natural Enemy Spawn:
+    A Fighter(id:38) spawns at location [D,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  I  I  _  I  _  _  _
+    B _  _  _  _  _  _  _  _  _  _
+    C _  _  _  I  I  G  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  F
+    E I  _  _  _  I  F  _  _  I  I
+    F _  _  _  <  <  P  _  _  C  _
+    G I  _  _  _  F  _  _  _  I  I
+    H _  _  _  _  _  _  _  _  _  _
+    I _  _  _  _  _  _  _  _  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(14.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [6,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,2]
+    [15,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,2]
+    [18,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,5]
+    [19,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,5]
+    [20,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[E,6]
+    [22,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,1]
+    [23,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[C,1]
+    [24,G]->health:150/150, Regen:1, Armour:1, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,6]
+    [29,P]->health:300/300, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[F,4]
+    [32,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,7]
+    [33,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[E,10]
+    [34,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,10]
+    [35,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[A,6]
+    [36,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,8]
+    [37,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,8]
+    [38,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,4]
+    [39,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,7]
+    [40,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,7]
+  Projectile:
+    [-21,<]->damage:70, move:2, location:[F,2]
+    [-25,<]->damage:70, move:2, location:[F,3]
+    [-31,<]->damage:100, move:10, location:[D,3]
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+    A enemy projectile(id:-21) moves: [F,4] -> [F,2]
+    A enemy projectile(id:-25) moves: [F,5] -> [F,3]
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Fighter(id:6) moves: [G,5] -> [G,2]
+      A enemy projectile(id:-29) spawns at location [G,1].
+      The projectile collides with Interceptor(id:4) at location [G,1], healing 100 damage.
+    A Fighter(id:20) stays at: [E,6]
+      A enemy projectile(id:-30) spawns at location [E,5].
+      The projectile collides with Interceptor(id:15) at location [E,5], healing 100 damage.
+    A Grunt(id:24) gains 10 total health.
+    A Carrier(id:32) moves: [F,9] -> [F,7]
+      A Interceptor(id:39) spawns at location [E,7].
+      A Interceptor(id:40) spawns at location [G,7].
+    A Fighter(id:38) moves: [D,10] -> [D,4]
+      A enemy projectile(id:-31) spawns at location [D,3].
+    A Interceptor(id:4) moves: [G,1] -> out of board
+    A Interceptor(id:15) moves: [E,5] -> [E,2]
+    A Interceptor(id:17) moves: [E,1] -> out of board
+    A Interceptor(id:18) stays at: [A,5]
+    A Interceptor(id:19) stays at: [C,5]
+    A Interceptor(id:22) moves: [A,4] -> [A,1]
+    A Interceptor(id:23) moves: [C,4] -> [C,1]
+    A Grunt(id:24) stays at: [C,6]
+      A enemy projectile(id:-32) spawns at location [C,5].
+      The projectile collides with Interceptor(id:19) at location [C,5], healing 15 damage.
+    A Pylon(id:29) moves: [F,6] -> [F,4]
+      The Pylon heals Fighter(id:6) at location [G,2] for 10 damage.
+      The Pylon heals Interceptor(id:15) at location [E,2] for 10 damage.
+      The Pylon heals Interceptor(id:19) at location [C,5] for 10 damage.
+      The Pylon heals Fighter(id:20) at location [E,6] for 10 damage.
+      The Pylon heals Grunt(id:24) at location [C,6] for 10 damage.
+      The Pylon heals Pylon(id:29) at location [F,4] for 10 damage.
+      The Pylon heals Carrier(id:32) at location [F,7] for 10 damage.
+      The Pylon heals Fighter(id:38) at location [D,4] for 10 damage.
+      The Pylon heals Interceptor(id:39) at location [E,7] for 10 damage.
+      The Pylon heals Interceptor(id:40) at location [G,7] for 10 damage.
+    A Interceptor(id:33) stays at: [E,10]
+    A Interceptor(id:34) stays at: [G,10]
+    A Interceptor(id:35) moves: [A,7] -> [A,6]
+    A Interceptor(id:36) moves: [E,9] -> [E,8]
+    A Interceptor(id:37) moves: [G,9] -> [G,8]
+  Natural Enemy Spawn:
+      1  2  3  4  5  6  7  8  9 10
+    A I  _  _  _  I  I  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _
+    C I  _  _  _  I  G  _  _  _  _
+    D _  _  <  F  _  _  _  _  _  _
+    E _  I  _  _  _  F  I  I  _  I
+    F _  <  <  P  _  _  C  _  _  _
+    G _  F  _  _  _  _  I  I  _  I
+    H _  _  _  _  _  _  _  _  _  _
+    I _  _  _  _  _  _  _  _  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(15.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [18,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,2]
+    [19,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[C,2]
+    [20,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,3]
+    [24,G]->health:160/160, Regen:1, Armour:1, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[C,4]
+    [29,P]->health:300/300, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[F,2]
+    [32,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,5]
+    [33,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,9]
+    [34,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,9]
+    [35,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,3]
+    [36,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,8]
+    [37,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,8]
+    [39,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,6]
+    [40,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,6]
+    [41,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,5]
+    [42,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,5]
+    [43,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[C,10]
+  Projectile:
+    [-25,<]->damage:70, move:2, location:[F,1]
+    [-34,<]->damage:15, move:4, location:[C,3]
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+    A enemy projectile(id:-21) moves: [F,2] -> out of board
+    A enemy projectile(id:-25) moves: [F,3] -> [F,1]
+    A enemy projectile(id:-31) moves: [D,3] -> out of board
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Fighter(id:6) moves: [G,2] -> out of board
+    A Fighter(id:20) moves: [E,6] -> [E,3]
+      A enemy projectile(id:-33) spawns at location [E,2].
+      The projectile collides with Interceptor(id:15) at location [E,2], healing 100 damage.
+    A Grunt(id:24) gains 10 total health.
+    A Carrier(id:32) moves: [F,7] -> [F,5]
+      A Interceptor(id:41) spawns at location [E,5].
+      A Interceptor(id:42) spawns at location [G,5].
+    A Fighter(id:38) moves: [D,4] -> out of board
+    A Interceptor(id:15) moves: [E,2] -> out of board
+    A Interceptor(id:18) moves: [A,5] -> [A,2]
+    A Interceptor(id:19) moves: [C,5] -> [C,2]
+    A Interceptor(id:22) moves: [A,1] -> out of board
+    A Interceptor(id:23) moves: [C,1] -> out of board
+    A Grunt(id:24) moves: [C,6] -> [C,4]
+      A enemy projectile(id:-34) spawns at location [C,3].
+    A Pylon(id:29) moves: [F,4] -> [F,2]
+      The Pylon heals Interceptor(id:18) at location [A,2] for 10 damage.
+      The Pylon heals Interceptor(id:19) at location [C,2] for 10 damage.
+      The Pylon heals Fighter(id:20) at location [E,3] for 10 damage.
+      The Pylon heals Grunt(id:24) at location [C,4] for 10 damage.
+      The Pylon heals Pylon(id:29) at location [F,2] for 10 damage.
+      The Pylon heals Carrier(id:32) at location [F,5] for 10 damage.
+      The Pylon heals Interceptor(id:41) at location [E,5] for 10 damage.
+      The Pylon heals Interceptor(id:42) at location [G,5] for 10 damage.
+    A Interceptor(id:33) moves: [E,10] -> [E,9]
+    A Interceptor(id:34) moves: [G,10] -> [G,9]
+    A Interceptor(id:35) moves: [A,6] -> [A,3]
+    A Interceptor(id:36) stays at: [E,8]
+    A Interceptor(id:37) stays at: [G,8]
+    A Interceptor(id:39) moves: [E,7] -> [E,6]
+    A Interceptor(id:40) moves: [G,7] -> [G,6]
+  Natural Enemy Spawn:
+    A Carrier(id:43) spawns at location [C,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  I  I  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _
+    C _  I  <  G  _  _  _  _  _  C
+    D _  _  _  _  _  _  _  _  _  _
+    E _  _  F  _  I  I  _  I  I  _
+    F <  P  _  _  C  _  _  _  _  _
+    G _  _  _  _  I  I  _  I  I  _
+    H _  _  _  _  _  _  _  _  _  _
+    I _  _  _  _  _  _  _  _  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(16.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [24,G]->health:170/170, Regen:1, Armour:1, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[C,2]
+    [32,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,3]
+    [33,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,9]
+    [34,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,9]
+    [36,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,7]
+    [37,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,7]
+    [39,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,6]
+    [40,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,6]
+    [41,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,4]
+    [42,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,4]
+    [43,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[C,8]
+    [44,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,3]
+    [45,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,3]
+    [46,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[B,8]
+    [47,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,8]
+    [48,G]->health:100/100, Regen:1, Armour:1, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,10]
+  Projectile:
+    [-35,<]->damage:15, move:4, location:[C,1]
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+    A enemy projectile(id:-25) moves: [F,1] -> out of board
+    A enemy projectile(id:-34) moves: [C,3] -> [C,2]
+      The projectile collides with Interceptor(id:19) at location [C,2], healing 15 damage.
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Fighter(id:20) moves: [E,3] -> out of board
+    A Grunt(id:24) gains 10 total health.
+    A Carrier(id:32) moves: [F,5] -> [F,3]
+      A Interceptor(id:44) spawns at location [E,3].
+      A Interceptor(id:45) spawns at location [G,3].
+    A Carrier(id:43) moves: [C,10] -> [C,8]
+      A Interceptor(id:46) spawns at location [B,8].
+      A Interceptor(id:47) spawns at location [D,8].
+    A Interceptor(id:18) moves: [A,2] -> out of board
+    A Interceptor(id:19) moves: [C,2] -> out of board
+    A Grunt(id:24) moves: [C,4] -> [C,2]
+      A enemy projectile(id:-35) spawns at location [C,1].
+    A Pylon(id:29) moves: [F,2] -> out of board
+    A Interceptor(id:33) stays at: [E,9]
+    A Interceptor(id:34) stays at: [G,9]
+    A Interceptor(id:35) moves: [A,3] -> out of board
+    A Interceptor(id:36) moves: [E,8] -> [E,7]
+    A Interceptor(id:37) moves: [G,8] -> [G,7]
+    A Interceptor(id:39) stays at: [E,6]
+    A Interceptor(id:40) stays at: [G,6]
+    A Interceptor(id:41) moves: [E,5] -> [E,4]
+    A Interceptor(id:42) moves: [G,5] -> [G,4]
+  Natural Enemy Spawn:
+    A Grunt(id:48) spawns at location [H,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  I  _  _
+    C <  G  _  _  _  _  _  C  _  _
+    D _  _  _  _  _  _  _  I  _  _
+    E _  _  I  I  _  I  I  _  I  _
+    F _  _  C  _  _  _  _  _  _  _
+    G _  _  I  I  _  I  I  _  I  _
+    H _  _  _  _  _  _  _  _  _  G
+    I _  _  _  _  _  _  _  _  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(17.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [32,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,1]
+    [33,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,8]
+    [34,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,8]
+    [36,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,7]
+    [37,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,7]
+    [39,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,5]
+    [40,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,5]
+    [41,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,4]
+    [42,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,4]
+    [43,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[C,6]
+    [44,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,2]
+    [45,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,2]
+    [46,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[B,7]
+    [47,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,7]
+    [48,G]->health:110/110, Regen:1, Armour:1, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[H,6]
+    [49,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[E,1]
+    [50,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,1]
+    [51,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[B,6]
+    [52,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,6]
+    [53,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,10]
+  Projectile:
+    [-36,<]->damage:15, move:4, location:[H,5]
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+    A enemy projectile(id:-35) moves: [C,1] -> out of board
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Grunt(id:24) gains 10 total health.
+    A Carrier(id:32) moves: [F,3] -> [F,1]
+      A Interceptor(id:49) spawns at location [E,1].
+      A Interceptor(id:50) spawns at location [G,1].
+    A Carrier(id:43) moves: [C,8] -> [C,6]
+      A Interceptor(id:51) spawns at location [B,6].
+      A Interceptor(id:52) spawns at location [D,6].
+    A Grunt(id:48) gains 10 total health.
+    A Grunt(id:24) moves: [C,2] -> out of board
+    A Interceptor(id:33) moves: [E,9] -> [E,8]
+    A Interceptor(id:34) moves: [G,9] -> [G,8]
+    A Interceptor(id:36) stays at: [E,7]
+    A Interceptor(id:37) stays at: [G,7]
+    A Interceptor(id:39) moves: [E,6] -> [E,5]
+    A Interceptor(id:40) moves: [G,6] -> [G,5]
+    A Interceptor(id:41) stays at: [E,4]
+    A Interceptor(id:42) stays at: [G,4]
+    A Interceptor(id:44) moves: [E,3] -> [E,2]
+    A Interceptor(id:45) moves: [G,3] -> [G,2]
+    A Interceptor(id:46) moves: [B,8] -> [B,7]
+    A Interceptor(id:47) moves: [D,8] -> [D,7]
+    A Grunt(id:48) moves: [H,10] -> [H,6]
+      A enemy projectile(id:-36) spawns at location [H,5].
+  Natural Enemy Spawn:
+    A Fighter(id:53) spawns at location [I,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  I  I  _  _  _
+    C _  _  _  _  _  C  _  _  _  _
+    D _  _  _  _  _  I  I  _  _  _
+    E I  I  _  I  I  _  I  I  _  _
+    F C  _  _  _  _  _  _  _  _  _
+    G I  I  _  I  I  _  I  I  _  _
+    H _  _  _  _  <  G  _  _  _  _
+    I _  _  _  _  _  _  _  _  _  F
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(18.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [33,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,8]
+    [34,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,8]
+    [36,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,6]
+    [37,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,6]
+    [39,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,5]
+    [40,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,5]
+    [41,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,3]
+    [42,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,3]
+    [43,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[C,4]
+    [44,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,2]
+    [45,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,2]
+    [46,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[B,7]
+    [47,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,7]
+    [48,G]->health:120/120, Regen:1, Armour:1, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[H,4]
+    [51,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[B,5]
+    [52,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,5]
+    [53,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,4]
+    [54,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[B,4]
+    [55,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,4]
+    [56,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,10]
+  Projectile:
+    [-36,<]->damage:15, move:4, location:[H,1]
+    [-37,<]->damage:100, move:10, location:[I,3]
+    [-38,<]->damage:15, move:4, location:[H,3]
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+    A enemy projectile(id:-36) moves: [H,5] -> [H,1]
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Carrier(id:32) moves: [F,1] -> out of board
+    A Carrier(id:43) moves: [C,6] -> [C,4]
+      A Interceptor(id:54) spawns at location [B,4].
+      A Interceptor(id:55) spawns at location [D,4].
+    A Grunt(id:48) gains 10 total health.
+    A Fighter(id:53) moves: [I,10] -> [I,4]
+      A enemy projectile(id:-37) spawns at location [I,3].
+    A Interceptor(id:33) stays at: [E,8]
+    A Interceptor(id:34) stays at: [G,8]
+    A Interceptor(id:36) moves: [E,7] -> [E,6]
+    A Interceptor(id:37) moves: [G,7] -> [G,6]
+    A Interceptor(id:39) stays at: [E,5]
+    A Interceptor(id:40) stays at: [G,5]
+    A Interceptor(id:41) moves: [E,4] -> [E,3]
+    A Interceptor(id:42) moves: [G,4] -> [G,3]
+    A Interceptor(id:44) stays at: [E,2]
+    A Interceptor(id:45) stays at: [G,2]
+    A Interceptor(id:46) stays at: [B,7]
+    A Interceptor(id:47) stays at: [D,7]
+    A Grunt(id:48) moves: [H,6] -> [H,4]
+      A enemy projectile(id:-38) spawns at location [H,3].
+    A Interceptor(id:49) moves: [E,1] -> out of board
+    A Interceptor(id:50) moves: [G,1] -> out of board
+    A Interceptor(id:51) moves: [B,6] -> [B,5]
+    A Interceptor(id:52) moves: [D,6] -> [D,5]
+  Natural Enemy Spawn:
+    A Fighter(id:56) spawns at location [G,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  _  _  _  _  _  _  _
+    B _  _  _  I  I  _  I  _  _  _
+    C _  _  _  C  _  _  _  _  _  _
+    D _  _  _  I  I  _  I  _  _  _
+    E _  I  I  _  I  I  _  I  _  _
+    F _  _  _  _  _  _  _  _  _  _
+    G _  I  I  _  I  I  _  I  _  F
+    H <  _  <  G  _  _  _  _  _  _
+    I _  _  <  F  _  _  _  _  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(19.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [33,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,7]
+    [34,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,7]
+    [36,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,6]
+    [37,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,6]
+    [39,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,4]
+    [40,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,4]
+    [41,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,3]
+    [42,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,3]
+    [43,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:F, can_see_Starfighter:T, location:[C,2]
+    [46,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[B,6]
+    [47,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,6]
+    [48,G]->health:130/130, Regen:1, Armour:1, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[H,2]
+    [51,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[B,5]
+    [52,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,5]
+    [54,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[B,3]
+    [55,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,3]
+    [56,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,9]
+    [57,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[B,2]
+    [58,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[D,2]
+    [59,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,10]
+  Projectile:
+    [-40,<]->damage:15, move:4, location:[H,1]
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+    A enemy projectile(id:-36) moves: [H,1] -> out of board
+    A enemy projectile(id:-37) moves: [I,3] -> out of board
+    A enemy projectile(id:-38) moves: [H,3] -> out of board
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Carrier(id:43) moves: [C,4] -> [C,2]
+      A Interceptor(id:57) spawns at location [B,2].
+      A Interceptor(id:58) spawns at location [D,2].
+    A Grunt(id:48) gains 10 total health.
+    A Fighter(id:53) moves: [I,4] -> out of board
+    A Fighter(id:56) moves: [G,10] -> [G,9]
+      A enemy projectile(id:-39) spawns at location [G,8].
+      The projectile collides with Interceptor(id:34) at location [G,8], healing 100 damage.
+    A Interceptor(id:33) moves: [E,8] -> [E,7]
+    A Interceptor(id:34) moves: [G,8] -> [G,7]
+    A Interceptor(id:36) stays at: [E,6]
+    A Interceptor(id:37) stays at: [G,6]
+    A Interceptor(id:39) moves: [E,5] -> [E,4]
+    A Interceptor(id:40) moves: [G,5] -> [G,4]
+    A Interceptor(id:41) stays at: [E,3]
+    A Interceptor(id:42) stays at: [G,3]
+    A Interceptor(id:44) moves: [E,2] -> out of board
+    A Interceptor(id:45) moves: [G,2] -> out of board
+    A Interceptor(id:46) moves: [B,7] -> [B,6]
+    A Interceptor(id:47) moves: [D,7] -> [D,6]
+    A Grunt(id:48) moves: [H,4] -> [H,2]
+      A enemy projectile(id:-40) spawns at location [H,1].
+    A Interceptor(id:51) stays at: [B,5]
+    A Interceptor(id:52) stays at: [D,5]
+    A Interceptor(id:54) moves: [B,4] -> [B,3]
+    A Interceptor(id:55) moves: [D,4] -> [D,3]
+  Natural Enemy Spawn:
+    A Carrier(id:59) spawns at location [H,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  _  _  _  _  _  _  _
+    B _  I  I  _  I  I  _  _  _  _
+    C _  C  _  _  _  _  _  _  _  _
+    D _  I  I  _  I  I  _  _  _  _
+    E _  _  I  I  _  I  I  _  _  _
+    F _  _  _  _  _  _  _  _  _  _
+    G _  _  I  I  _  I  I  _  F  _
+    H <  G  _  _  _  _  _  _  _  C
+    I _  _  _  _  _  _  _  _  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(20.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [33,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,7]
+    [34,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,7]
+    [36,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,5]
+    [37,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,5]
+    [39,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,4]
+    [40,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,4]
+    [46,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[B,6]
+    [47,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,6]
+    [51,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[B,4]
+    [52,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,4]
+    [54,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[B,3]
+    [55,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,3]
+    [56,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,8]
+    [59,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,8]
+    [60,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,8]
+    [61,P]->health:300/300, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,10]
+  Projectile:
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+    A enemy projectile(id:-40) moves: [H,1] -> out of board
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Carrier(id:43) moves: [C,2] -> out of board
+    A Grunt(id:48) gains 10 total health.
+    A Fighter(id:56) moves: [G,9] -> [G,8]
+      A enemy projectile(id:-41) spawns at location [G,7].
+      The projectile collides with Interceptor(id:34) at location [G,7], healing 100 damage.
+    A Carrier(id:59) moves: [H,10] -> [H,8]
+      A Interceptor(id:60) spawns at location [I,8].
+    A Interceptor(id:33) stays at: [E,7]
+    A Interceptor(id:34) stays at: [G,7]
+    A Interceptor(id:36) moves: [E,6] -> [E,5]
+    A Interceptor(id:37) moves: [G,6] -> [G,5]
+    A Interceptor(id:39) stays at: [E,4]
+    A Interceptor(id:40) stays at: [G,4]
+    A Interceptor(id:41) moves: [E,3] -> out of board
+    A Interceptor(id:42) moves: [G,3] -> out of board
+    A Interceptor(id:46) stays at: [B,6]
+    A Interceptor(id:47) stays at: [D,6]
+    A Grunt(id:48) moves: [H,2] -> out of board
+    A Interceptor(id:51) moves: [B,5] -> [B,4]
+    A Interceptor(id:52) moves: [D,5] -> [D,4]
+    A Interceptor(id:54) stays at: [B,3]
+    A Interceptor(id:55) stays at: [D,3]
+    A Interceptor(id:57) moves: [B,2] -> out of board
+    A Interceptor(id:58) moves: [D,2] -> out of board
+  Natural Enemy Spawn:
+    A Pylon(id:61) spawns at location [D,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  _  _  _  _  _  _  _
+    B _  _  I  I  _  I  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _
+    D _  _  I  I  _  I  _  _  _  P
+    E _  _  _  I  I  _  I  _  _  _
+    F _  _  _  _  _  _  _  _  _  _
+    G _  _  _  I  I  _  I  F  _  _
+    H _  _  _  _  _  _  _  C  _  _
+    I _  _  _  _  _  _  _  I  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(21.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [33,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,6]
+    [34,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,7]
+    [36,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,5]
+    [37,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,5]
+    [39,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[E,1]
+    [40,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,1]
+    [46,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[B,5]
+    [47,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,5]
+    [51,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[B,4]
+    [52,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,4]
+    [56,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,8]
+    [59,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,6]
+    [60,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,7]
+    [61,P]->health:300/300, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,8]
+    [62,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,6]
+    [63,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,6]
+    [64,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,10]
+  Projectile:
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Fighter(id:56) stays at: [G,8]
+      A enemy projectile(id:-42) spawns at location [G,7].
+      The projectile collides with Interceptor(id:34) at location [G,7], healing 100 damage.
+    A Carrier(id:59) moves: [H,8] -> [H,6]
+      A Interceptor(id:62) spawns at location [G,6].
+      A Interceptor(id:63) spawns at location [I,6].
+    A Interceptor(id:33) moves: [E,7] -> [E,6]
+    A Interceptor(id:34) stays at: [G,7]
+    A Interceptor(id:36) stays at: [E,5]
+    A Interceptor(id:37) stays at: [G,5]
+    A Interceptor(id:39) moves: [E,4] -> [E,1]
+    A Interceptor(id:40) moves: [G,4] -> [G,1]
+    A Interceptor(id:46) moves: [B,6] -> [B,5]
+    A Interceptor(id:47) moves: [D,6] -> [D,5]
+    A Interceptor(id:51) stays at: [B,4]
+    A Interceptor(id:52) stays at: [D,4]
+    A Interceptor(id:54) moves: [B,3] -> out of board
+    A Interceptor(id:55) moves: [D,3] -> out of board
+    A Interceptor(id:60) moves: [I,8] -> [I,7]
+    A Pylon(id:61) moves: [D,10] -> [D,8]
+      The Pylon heals Interceptor(id:33) at location [E,6] for 10 damage.
+      The Pylon heals Interceptor(id:34) at location [G,7] for 10 damage.
+      The Pylon heals Interceptor(id:36) at location [E,5] for 10 damage.
+      The Pylon heals Interceptor(id:46) at location [B,5] for 10 damage.
+      The Pylon heals Interceptor(id:47) at location [D,5] for 10 damage.
+      The Pylon heals Interceptor(id:52) at location [D,4] for 10 damage.
+      The Pylon heals Fighter(id:56) at location [G,8] for 10 damage.
+      The Pylon heals Pylon(id:61) at location [D,8] for 10 damage.
+      The Pylon heals Interceptor(id:62) at location [G,6] for 10 damage.
+  Natural Enemy Spawn:
+    A Carrier(id:64) spawns at location [G,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  _  _  _  _  _  _  _
+    B _  _  _  I  I  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _
+    D _  _  _  I  I  _  _  P  _  _
+    E I  _  _  _  I  I  _  _  _  _
+    F _  _  _  _  _  _  _  _  _  _
+    G I  _  _  _  I  I  I  F  _  C
+    H _  _  _  _  _  C  _  _  _  _
+    I _  _  _  _  _  I  I  _  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(22.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [33,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,6]
+    [34,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,7]
+    [36,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,2]
+    [37,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,5]
+    [46,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[B,5]
+    [47,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,5]
+    [51,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[B,1]
+    [52,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[D,1]
+    [56,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,8]
+    [59,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,4]
+    [60,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,7]
+    [61,P]->health:300/300, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,6]
+    [62,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,6]
+    [63,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,5]
+    [64,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,9]
+    [65,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,4]
+    [66,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,4]
+    [67,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,9]
+    [68,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,9]
+    [69,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[A,10]
+  Projectile:
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Fighter(id:56) stays at: [G,8]
+      A enemy projectile(id:-43) spawns at location [G,7].
+      The projectile collides with Interceptor(id:34) at location [G,7], healing 100 damage.
+    A Carrier(id:59) moves: [H,6] -> [H,4]
+      A Interceptor(id:65) spawns at location [G,4].
+      A Interceptor(id:66) spawns at location [I,4].
+    A Carrier(id:64) moves: [G,10] -> [G,9]
+      A Interceptor(id:67) spawns at location [F,9].
+      A Interceptor(id:68) spawns at location [H,9].
+    A Interceptor(id:33) stays at: [E,6]
+    A Interceptor(id:34) stays at: [G,7]
+    A Interceptor(id:36) moves: [E,5] -> [E,2]
+    A Interceptor(id:37) stays at: [G,5]
+    A Interceptor(id:39) moves: [E,1] -> out of board
+    A Interceptor(id:40) moves: [G,1] -> out of board
+    A Interceptor(id:46) stays at: [B,5]
+    A Interceptor(id:47) stays at: [D,5]
+    A Interceptor(id:51) moves: [B,4] -> [B,1]
+    A Interceptor(id:52) moves: [D,4] -> [D,1]
+    A Interceptor(id:60) stays at: [I,7]
+    A Pylon(id:61) moves: [D,8] -> [D,6]
+      The Pylon heals Interceptor(id:33) at location [E,6] for 10 damage.
+      The Pylon heals Interceptor(id:34) at location [G,7] for 10 damage.
+      The Pylon heals Interceptor(id:36) at location [E,2] for 10 damage.
+      The Pylon heals Interceptor(id:37) at location [G,5] for 10 damage.
+      The Pylon heals Interceptor(id:46) at location [B,5] for 10 damage.
+      The Pylon heals Interceptor(id:47) at location [D,5] for 10 damage.
+      The Pylon heals Interceptor(id:52) at location [D,1] for 10 damage.
+      The Pylon heals Fighter(id:56) at location [G,8] for 10 damage.
+      The Pylon heals Pylon(id:61) at location [D,6] for 10 damage.
+      The Pylon heals Interceptor(id:62) at location [G,6] for 10 damage.
+      The Pylon heals Interceptor(id:63) at location [I,6] for 10 damage.
+      The Pylon heals Interceptor(id:65) at location [G,4] for 10 damage.
+      The Pylon heals Interceptor(id:67) at location [F,9] for 10 damage.
+    A Interceptor(id:62) stays at: [G,6]
+    A Interceptor(id:63) moves: [I,6] -> [I,5]
+  Natural Enemy Spawn:
+    A Fighter(id:69) spawns at location [A,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  _  _  _  _  _  _  F
+    B I  _  _  _  I  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _
+    D I  _  _  _  I  P  _  _  _  _
+    E _  I  _  _  _  I  _  _  _  _
+    F _  _  _  _  _  _  _  _  I  _
+    G _  _  _  I  I  I  I  F  C  _
+    H _  _  _  C  _  _  _  _  I  _
+    I _  _  _  I  I  _  I  _  _  _
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(23.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [33,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,3]
+    [34,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,7]
+    [37,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,5]
+    [46,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[B,2]
+    [47,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[D,2]
+    [56,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,8]
+    [59,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,2]
+    [60,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,6]
+    [61,P]->health:300/300, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[D,4]
+    [62,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,6]
+    [63,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,5]
+    [64,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,9]
+    [65,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,3]
+    [66,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,3]
+    [67,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[F,6]
+    [68,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[H,6]
+    [69,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:F, can_see_Starfighter:F, location:[A,4]
+    [70,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,2]
+    [71,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,2]
+    [72,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,10]
+  Projectile:
+    [-45,<]->damage:100, move:10, location:[A,3]
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Fighter(id:56) stays at: [G,8]
+      A enemy projectile(id:-44) spawns at location [G,7].
+      The projectile collides with Interceptor(id:34) at location [G,7], healing 100 damage.
+    A Carrier(id:59) moves: [H,4] -> [H,2]
+      A Interceptor(id:70) spawns at location [G,2].
+      A Interceptor(id:71) spawns at location [I,2].
+    A Carrier(id:64) stays at: [G,9]
+    A Fighter(id:69) moves: [A,10] -> [A,4]
+      A enemy projectile(id:-45) spawns at location [A,3].
+    A Interceptor(id:33) moves: [E,6] -> [E,3]
+    A Interceptor(id:34) stays at: [G,7]
+    A Interceptor(id:36) moves: [E,2] -> out of board
+    A Interceptor(id:37) stays at: [G,5]
+    A Interceptor(id:46) moves: [B,5] -> [B,2]
+    A Interceptor(id:47) moves: [D,5] -> [D,2]
+    A Interceptor(id:51) moves: [B,1] -> out of board
+    A Interceptor(id:52) moves: [D,1] -> out of board
+    A Interceptor(id:60) moves: [I,7] -> [I,6]
+    A Pylon(id:61) moves: [D,6] -> [D,4]
+      The Pylon heals Interceptor(id:33) at location [E,3] for 10 damage.
+      The Pylon heals Interceptor(id:37) at location [G,5] for 10 damage.
+      The Pylon heals Interceptor(id:46) at location [B,2] for 10 damage.
+      The Pylon heals Interceptor(id:47) at location [D,2] for 10 damage.
+      The Pylon heals Pylon(id:61) at location [D,4] for 10 damage.
+      The Pylon heals Interceptor(id:62) at location [G,6] for 10 damage.
+      The Pylon heals Interceptor(id:65) at location [G,4] for 10 damage.
+      The Pylon heals Interceptor(id:66) at location [I,4] for 10 damage.
+      The Pylon heals Fighter(id:69) at location [A,4] for 10 damage.
+      The Pylon heals Interceptor(id:70) at location [G,2] for 10 damage.
+    A Interceptor(id:62) stays at: [G,6]
+    A Interceptor(id:63) stays at: [I,5]
+    A Interceptor(id:65) moves: [G,4] -> [G,3]
+    A Interceptor(id:66) moves: [I,4] -> [I,3]
+    A Interceptor(id:67) moves: [F,9] -> [F,6]
+    A Interceptor(id:68) moves: [H,9] -> [H,6]
+  Natural Enemy Spawn:
+    A Carrier(id:72) spawns at location [I,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  <  F  _  _  _  _  _  _
+    B _  I  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _
+    D _  I  _  P  _  _  _  _  _  _
+    E _  _  I  _  _  _  _  _  _  _
+    F _  _  _  _  _  I  _  _  _  _
+    G _  I  I  _  I  I  I  F  C  _
+    H _  C  _  _  _  I  _  _  _  _
+    I _  I  I  _  I  I  _  _  _  C
+    J _  _  _  _  _  _  _  _  _  S
+->pass
+  state:in game(24.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [34,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,7]
+    [37,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,4]
+    [56,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,8]
+    [60,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,6]
+    [61,P]->health:300/300, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:F, can_see_Starfighter:F, location:[D,2]
+    [62,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,5]
+    [63,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,4]
+    [64,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,9]
+    [65,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,3]
+    [66,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,3]
+    [67,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[F,3]
+    [68,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[H,3]
+    [72,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,8]
+    [73,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,9]
+    [74,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,9]
+    [75,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,8]
+    [76,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[J,8]
+    [77,P]->health:300/300, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[E,10]
+  Projectile:
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+    A enemy projectile(id:-45) moves: [A,3] -> out of board
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Fighter(id:56) stays at: [G,8]
+      A enemy projectile(id:-46) spawns at location [G,7].
+      The projectile collides with Interceptor(id:34) at location [G,7], healing 100 damage.
+    A Carrier(id:59) moves: [H,2] -> out of board
+    A Carrier(id:64) stays at: [G,9]
+      A Interceptor(id:73) spawns at location [F,9].
+      A Interceptor(id:74) spawns at location [H,9].
+    A Fighter(id:69) moves: [A,4] -> out of board
+    A Carrier(id:72) moves: [I,10] -> [I,8]
+      A Interceptor(id:75) spawns at location [H,8].
+      A Interceptor(id:76) spawns at location [J,8].
+    A Interceptor(id:33) moves: [E,3] -> out of board
+    A Interceptor(id:34) stays at: [G,7]
+    A Interceptor(id:37) moves: [G,5] -> [G,4]
+    A Interceptor(id:46) moves: [B,2] -> out of board
+    A Interceptor(id:47) moves: [D,2] -> out of board
+    A Interceptor(id:60) stays at: [I,6]
+    A Pylon(id:61) moves: [D,4] -> [D,2]
+      The Pylon heals Interceptor(id:37) at location [G,4] for 10 damage.
+      The Pylon heals Pylon(id:61) at location [D,2] for 10 damage.
+      The Pylon heals Interceptor(id:65) at location [G,3] for 10 damage.
+      The Pylon heals Interceptor(id:70) at location [G,2] for 10 damage.
+      The Pylon heals Interceptor(id:71) at location [I,2] for 10 damage.
+    A Interceptor(id:62) moves: [G,6] -> [G,5]
+    A Interceptor(id:63) moves: [I,5] -> [I,4]
+    A Interceptor(id:65) stays at: [G,3]
+    A Interceptor(id:66) stays at: [I,3]
+    A Interceptor(id:67) moves: [F,6] -> [F,3]
+    A Interceptor(id:68) moves: [H,6] -> [H,3]
+    A Interceptor(id:70) moves: [G,2] -> out of board
+    A Interceptor(id:71) moves: [I,2] -> out of board
+  Natural Enemy Spawn:
+    A Pylon(id:77) spawns at location [E,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _
+    D _  P  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  _  _  P
+    F _  _  I  _  _  _  _  _  I  _
+    G _  _  I  I  I  _  I  F  C  _
+    H _  _  I  _  _  _  _  I  I  _
+    I _  _  I  I  _  I  _  C  _  _
+    J _  _  _  _  _  _  _  I  _  S
+->pass
+  state:in game(25.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [34,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,6]
+    [37,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,4]
+    [56,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,8]
+    [60,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,5]
+    [62,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,5]
+    [63,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,4]
+    [64,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,9]
+    [72,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,7]
+    [73,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[F,6]
+    [74,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,9]
+    [75,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,8]
+    [76,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[J,8]
+    [77,P]->health:300/300, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,9]
+    [78,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,7]
+    [79,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[J,7]
+    [80,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,10]
+  Projectile:
+    [-48,<]->damage:70, move:2, location:[E,8]
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Fighter(id:56) stays at: [G,8]
+      A enemy projectile(id:-47) spawns at location [G,7].
+      The projectile collides with Interceptor(id:34) at location [G,7], healing 100 damage.
+    A Carrier(id:64) stays at: [G,9]
+    A Carrier(id:72) moves: [I,8] -> [I,7]
+      A Interceptor(id:78) spawns at location [H,7].
+      A Interceptor(id:79) spawns at location [J,7].
+    A Interceptor(id:34) moves: [G,7] -> [G,6]
+    A Interceptor(id:37) stays at: [G,4]
+    A Interceptor(id:60) moves: [I,6] -> [I,5]
+    A Pylon(id:61) moves: [D,2] -> out of board
+    A Interceptor(id:62) stays at: [G,5]
+    A Interceptor(id:63) stays at: [I,4]
+    A Interceptor(id:65) moves: [G,3] -> out of board
+    A Interceptor(id:66) moves: [I,3] -> out of board
+    A Interceptor(id:67) moves: [F,3] -> out of board
+    A Interceptor(id:68) moves: [H,3] -> out of board
+    A Interceptor(id:73) moves: [F,9] -> [F,6]
+    A Interceptor(id:74) stays at: [H,9]
+    A Interceptor(id:75) stays at: [H,8]
+    A Interceptor(id:76) stays at: [J,8]
+    A Pylon(id:77) moves: [E,10] -> [E,9]
+      A enemy projectile(id:-48) spawns at location [E,8].
+  Natural Enemy Spawn:
+    A Interceptor(id:80) spawns at location [F,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  _  _  <  P  _
+    F _  _  _  _  _  I  _  _  _  I
+    G _  _  _  I  I  I  _  F  C  _
+    H _  _  _  _  _  _  I  I  I  _
+    I _  _  _  I  I  _  C  _  _  _
+    J _  _  _  _  _  _  I  I  _  S
+->pass
+  state:in game(26.0), debug, ok
+  Starfighter:
+    [0,S]->health:70/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:0
+  Enemy:
+    [34,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,6]
+    [37,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,1]
+    [56,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,7]
+    [60,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,5]
+    [62,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,2]
+    [63,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,1]
+    [64,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,8]
+    [72,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,6]
+    [73,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[F,3]
+    [74,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,9]
+    [75,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,8]
+    [76,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[J,8]
+    [77,P]->health:300/300, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,7]
+    [78,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,7]
+    [79,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[J,7]
+    [80,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,9]
+    [81,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[F,8]
+    [82,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[H,6]
+    [83,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[J,6]
+    [84,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,10]
+  Projectile:
+    [-48,<]->damage:70, move:2, location:[E,6]
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+    A enemy projectile(id:-48) moves: [E,8] -> [E,6]
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Fighter(id:56) moves: [G,8] -> [G,7]
+      A enemy projectile(id:-49) spawns at location [G,6].
+      The projectile collides with Interceptor(id:34) at location [G,6], healing 100 damage.
+    A Carrier(id:64) moves: [G,9] -> [G,8]
+      A Interceptor(id:81) spawns at location [F,8].
+    A Carrier(id:72) moves: [I,7] -> [I,6]
+      A Interceptor(id:82) spawns at location [H,6].
+      A Interceptor(id:83) spawns at location [J,6].
+    A Interceptor(id:34) stays at: [G,6]
+    A Interceptor(id:37) moves: [G,4] -> [G,1]
+    A Interceptor(id:60) stays at: [I,5]
+    A Interceptor(id:62) moves: [G,5] -> [G,2]
+    A Interceptor(id:63) moves: [I,4] -> [I,1]
+    A Interceptor(id:73) moves: [F,6] -> [F,3]
+    A Interceptor(id:74) stays at: [H,9]
+    A Interceptor(id:75) stays at: [H,8]
+    A Interceptor(id:76) stays at: [J,8]
+    A Pylon(id:77) moves: [E,9] -> [E,7]
+      The Pylon heals Interceptor(id:34) at location [G,6] for 10 damage.
+      The Pylon heals Fighter(id:56) at location [G,7] for 10 damage.
+      The Pylon heals Carrier(id:64) at location [G,8] for 10 damage.
+      The Pylon heals Carrier(id:72) at location [I,6] for 10 damage.
+      The Pylon heals Interceptor(id:73) at location [F,3] for 10 damage.
+      The Pylon heals Interceptor(id:74) at location [H,9] for 10 damage.
+      The Pylon heals Interceptor(id:75) at location [H,8] for 10 damage.
+      The Pylon heals Pylon(id:77) at location [E,7] for 10 damage.
+      The Pylon heals Interceptor(id:78) at location [H,7] for 10 damage.
+      The Pylon heals Interceptor(id:79) at location [J,7] for 10 damage.
+      The Pylon heals Interceptor(id:80) at location [F,10] for 10 damage.
+      The Pylon heals Interceptor(id:81) at location [F,8] for 10 damage.
+      The Pylon heals Interceptor(id:82) at location [H,6] for 10 damage.
+    A Interceptor(id:78) stays at: [H,7]
+    A Interceptor(id:79) stays at: [J,7]
+    A Interceptor(id:80) moves: [F,10] -> [F,9]
+  Natural Enemy Spawn:
+    A Fighter(id:84) spawns at location [H,10].
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _
+    E _  _  _  _  _  <  P  _  _  _
+    F _  _  I  _  _  _  _  I  I  _
+    G I  I  _  _  _  I  F  C  _  _
+    H _  _  _  _  _  I  I  I  I  F
+    I I  _  _  _  I  C  _  _  _  _
+    J _  _  _  _  _  I  I  I  _  S
+->pass
+  state:not started, debug, ok
+  Starfighter:
+    [0,S]->health:0/70, energy:70/70, Regen:1/3, Armour:1, Vision:13, Move:10, Move Cost:3, location:[J,10]
+      Projectile Pattern:Standard, Projectile Damage:70, Projectile Cost:5 (energy)
+      Power:Recall (50 energy): Teleport back to spawn.
+      score:1
+  Enemy:
+    [34,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[G,3]
+    [56,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,7]
+    [60,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[I,2]
+    [64,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[G,8]
+    [72,C]->health:200/200, Regen:10, Armour:15, Vision:15, seen_by_Starfighter:T, can_see_Starfighter:T, location:[I,6]
+    [74,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,9]
+    [75,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,8]
+    [76,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[J,8]
+    [77,P]->health:300/300, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[E,5]
+    [78,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,7]
+    [79,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[J,7]
+    [80,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:T, location:[F,9]
+    [81,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[F,5]
+    [82,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[H,3]
+    [83,I]->health:50/50, Regen:0, Armour:0, Vision:5, seen_by_Starfighter:T, can_see_Starfighter:F, location:[J,3]
+    [84,F]->health:150/150, Regen:5, Armour:10, Vision:10, seen_by_Starfighter:T, can_see_Starfighter:T, location:[H,10]
+  Projectile:
+    [-48,<]->damage:70, move:2, location:[E,4]
+  Friendly Projectile Action:
+  Enemy Projectile Action:
+    A enemy projectile(id:-48) moves: [E,6] -> [E,4]
+  Starfighter Action:
+    The Starfighter(id:0) passes at location [J,10], doubling regen rate.
+  Enemy Action:
+    A Fighter(id:56) stays at: [G,7]
+      A enemy projectile(id:-50) spawns at location [G,6].
+      The projectile collides with Interceptor(id:34) at location [G,6], healing 100 damage.
+    A Carrier(id:64) stays at: [G,8]
+    A Carrier(id:72) stays at: [I,6]
+    A Fighter(id:84) stays at: [H,10]
+      A enemy projectile(id:-51) spawns at location [H,9].
+      The projectile collides with Interceptor(id:74) at location [H,9], healing 100 damage.
+    A Interceptor(id:34) moves: [G,6] -> [G,3]
+    A Interceptor(id:37) moves: [G,1] -> out of board
+    A Interceptor(id:60) moves: [I,5] -> [I,2]
+    A Interceptor(id:62) moves: [G,2] -> out of board
+    A Interceptor(id:63) moves: [I,1] -> out of board
+    A Interceptor(id:73) moves: [F,3] -> out of board
+    A Interceptor(id:74) stays at: [H,9]
+    A Interceptor(id:75) stays at: [H,8]
+    A Interceptor(id:76) stays at: [J,8]
+    A Pylon(id:77) moves: [E,7] -> [E,5]
+      The Pylon heals Interceptor(id:34) at location [G,3] for 10 damage.
+      The Pylon heals Fighter(id:56) at location [G,7] for 10 damage.
+      The Pylon heals Carrier(id:64) at location [G,8] for 10 damage.
+      The Pylon heals Carrier(id:72) at location [I,6] for 10 damage.
+      The Pylon heals Pylon(id:77) at location [E,5] for 10 damage.
+      The Pylon heals Interceptor(id:78) at location [H,7] for 10 damage.
+      The Pylon heals Interceptor(id:80) at location [F,9] for 10 damage.
+      The Pylon heals Interceptor(id:81) at location [F,8] for 10 damage.
+      The Pylon heals Interceptor(id:82) at location [H,6] for 10 damage.
+    A Interceptor(id:78) stays at: [H,7]
+    A Interceptor(id:79) stays at: [J,7]
+    A Interceptor(id:80) stays at: [F,9]
+    A Interceptor(id:81) moves: [F,8] -> [F,5]
+    A Interceptor(id:82) moves: [H,6] -> [H,3]
+    A Interceptor(id:83) moves: [J,6] -> [J,3]
+  Natural Enemy Spawn:
+    A Pylon(id:85) spawns at location [J,10].
+      The Pylon collides with Starfighter(id:0) at location [J,10], trading 300 damage.
+      The Pylon at location [J,10] has been destroyed.
+      The Starfighter at location [J,10] has been destroyed.
+      1  2  3  4  5  6  7  8  9 10
+    A _  _  _  _  _  _  _  _  _  _
+    B _  _  _  _  _  _  _  _  _  _
+    C _  _  _  _  _  _  _  _  _  _
+    D _  _  _  _  _  _  _  _  _  _
+    E _  _  _  <  P  _  _  _  _  _
+    F _  _  _  _  I  _  _  _  I  _
+    G _  _  I  _  _  _  F  C  _  _
+    H _  _  I  _  _  _  I  I  I  F
+    I _  I  _  _  _  C  _  _  _  _
+    J _  _  I  _  _  _  I  I  _  X
+  The game is over. Better luck next time!

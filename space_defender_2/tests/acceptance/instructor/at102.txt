@@ -1,0 +1,18 @@
+--Test Spread collision detection is different from Starfighter moving for diagonal moving projectiles.
+play(10,10,1,1,1,1,1)
+setup_select(2)
+setup_next(5)
+
+toggle_debug_mode
+
+
+move(D,7)
+fire
+move(A,9)
+pass
+
+move(G,7)
+fire
+move(J,9)
+move(J,8)
+move(J,9)

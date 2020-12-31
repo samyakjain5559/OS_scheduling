@@ -1,0 +1,10 @@
+--Test enemy moving into friendly projectile. 
+toggle_debug_mode
+play(5,16,1,1,1,2,2)
+
+setup_next(5)
+
+move(A,1)
+fire
+pass
+pass

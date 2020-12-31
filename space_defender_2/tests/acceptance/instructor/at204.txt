@@ -1,0 +1,11 @@
+--Test friendly projectile moves into Starfighter.
+toggle_debug_mode
+play(5,30,1,1,1,1,1)
+setup_next(5)
+
+
+fire
+move(B,9)
+move(B,19)
+move(C,19)
+pass

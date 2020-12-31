@@ -1,0 +1,24 @@
+--Test full carrier focus.
+toggle_debug_mode
+play(10,20,20,40,60,80,100)
+
+setup_select(3)
+setup_next(2)
+setup_select(2)
+setup_next(1)
+setup_select(5)
+setup_next(1)
+setup_next(1)
+
+
+
+pass
+move(H,9)
+fire
+pass
+
+move(G,4)
+fire
+pass
+
+special

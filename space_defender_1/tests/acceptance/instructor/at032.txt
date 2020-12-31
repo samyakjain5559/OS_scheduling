@@ -1,0 +1,27 @@
+--Firing and moving multiple times.
+play(5,30,30,2)
+fire
+move(A,1)
+fire
+move(B,20)
+fire
+move(A,15)
+fire
+fire
+move(C,17)
+fire
+fire
+move(E,10)
+fire
+fire
+fire
+fire
+fire
+fire
+fire
+fire
+fire
+fire
+fire
+fire
+

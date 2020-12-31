@@ -1,0 +1,19 @@
+--Test moving and firing Snipe multiple times.
+play(10,30,1,1,1,1,1)
+setup_select(3)
+setup_next(5)
+
+toggle_debug_mode
+
+fire
+move(D,10)
+fire
+fire
+move(B,8)
+fire
+fire
+move(A,16)
+fire
+fire
+fire
+fire

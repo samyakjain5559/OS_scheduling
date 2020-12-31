@@ -1,0 +1,9 @@
+--Test enemy projectile moves into another enemy.
+toggle_debug_mode
+play(5,10,38,38,38,38,38)
+setup_next(5)
+
+move(A,1)
+fire
+move(D,5)
+pass

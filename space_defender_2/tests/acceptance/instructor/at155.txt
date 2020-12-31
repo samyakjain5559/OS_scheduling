@@ -1,0 +1,18 @@
+--Test Repair is done after regen. 
+toggle_debug_mode
+
+play(5,11,1,1,1,2,2)
+setup_select(3)
+setup_next(3)
+setup_select(2)
+setup_next(1)
+setup_next(1)
+
+move(C,3)
+fire
+move(C,1)
+pass
+pass
+pass
+special
+

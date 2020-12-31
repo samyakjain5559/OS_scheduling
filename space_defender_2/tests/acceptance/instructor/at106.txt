@@ -1,0 +1,20 @@
+--Test moving and firing Splitter multiple times. Pass is used to regen energy.
+play(5,10,1,1,1,1,1)
+setup_select(5)
+setup_next(5)
+
+toggle_debug_mode
+move(B,4)
+fire
+move(D,5)
+fire
+pass
+pass
+pass
+pass
+pass
+move(C,2)
+fire
+move(B,2)
+move(C,2)
+

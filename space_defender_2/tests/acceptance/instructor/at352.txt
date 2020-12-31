@@ -1,0 +1,11 @@
+--Test enemy interceptor actions, with and without vision.
+toggle_debug_mode
+play(5,10,1,1,1,2,2)
+
+setup_next(5)
+move(B,6)
+pass
+pass
+pass
+fire
+pass

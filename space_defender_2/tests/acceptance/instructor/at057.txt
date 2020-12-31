@@ -1,0 +1,13 @@
+--Test fog of war on small board.
+play(5,10,1,1,1,1,1)
+
+
+setup_select(3)
+setup_next(1)
+setup_select(1)
+setup_next(1)
+setup_select(1)
+setup_next(5)
+
+move(C,10)
+
