@@ -1,8 +1,0 @@
---Tests move errors and whether priorities are respected.
-move(A,1)
-play(5,10,1,1)
-move(F,1)
-move(E,1)
-move(D,1)
-move(E,1)
-move(F,1)

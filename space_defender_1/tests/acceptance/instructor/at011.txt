@@ -1,9 +1,0 @@
---Tests Starfighter movement too large multiple times for play.
-play(5,10,14,1)
-play(5,10,15,1)
-play(5,10,16,1)
-play(10,30,39,1)
-play(10,30,40,1)
-play(8,21,29,1)
-play(8,21,28,1)
-

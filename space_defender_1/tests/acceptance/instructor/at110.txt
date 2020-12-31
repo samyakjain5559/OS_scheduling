@@ -1,5 +1,0 @@
---Move up right, collision occurs on up part during transit.
-play(5,30,10,2)
-fire
-move(E,6)
-move(A,8)
