@@ -1,8 +1,0 @@
---Move down left, collision occurs on down part during transit.
-play(6,30,20,1)
-fire
-fire
-move(B,4)
-fire
-move(A,7)
-move(C,3)
